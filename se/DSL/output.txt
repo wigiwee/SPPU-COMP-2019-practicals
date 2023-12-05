@@ -1,0 +1,432 @@
+Assignment1
+
+Enter the number of students in second year computer class
+10
+Enter the names of the students, press Enter after the name of each student
+
+A
+B
+C
+D
+E
+F
+G
+H
+I
+I
+The Final list (After removing duplicates)of students in second year computer class is
+ ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
+
+Enter the number of students who play cricket
+5
+Enter the names of the students, press Enter after the name of each student
+
+A
+B
+C
+D
+H
+The Final list (After removing duplicates)of students who play Cricket
+ ['A', 'B', 'C', 'D', 'H']
+
+Enter the number of students who play football
+6
+Enter the names of the students, press Enter after the name of each student
+
+A
+A
+C
+H
+I
+E
+The Final list (After removing duplicates)of students who play Football
+ ['A', 'C', 'H', 'I', 'E']
+
+Enter the number of students who play Badminton
+5
+Enter the names of the students, press Enter after the name of each student
+
+E
+F
+G
+H
+I
+The Final list (After removing duplicates)of students who play Badminton
+ ['E', 'F', 'G', 'H', 'I']
+
+
+
+--------------------MENU--------------------
+
+1. List of students who play both cricket and badminton
+2. List of students who play either cricket or badminton but not both
+3. List of students who play neither cricket nor badminton
+4. Number of students who play cricket and football but not badminton
+5. Exit
+
+Enter your Choice: 1
+
+
+Students who play both Cricket and Football are:
+
+['A', 'C', 'H']
+Do you wish to Continue:(y/n)
+
+y
+
+
+--------------------MENU--------------------
+
+1. List of students who play both cricket and badminton
+2. List of students who play either cricket or badminton but not both
+3. List of students who play neither cricket nor badminton
+4. Number of students who play cricket and football but not badminton
+5. Exit
+
+Enter your Choice: 2
+
+
+Students who play either cricket or badminton but not both are:
+
+['A', 'B', 'C', 'D', 'E', 'F', 'G', 'I']
+Do you wish to Continue:(y/n)
+
+y
+
+
+--------------------MENU--------------------
+
+1. List of students who play both cricket and badminton
+2. List of students who play either cricket or badminton but not both
+3. List of students who play neither cricket nor badminton
+4. Number of students who play cricket and football but not badminton
+5. Exit
+
+Enter your Choice: 3
+
+
+Students who play neither cricket nor badminton:
+
+[]
+Do you wish to Continue:(y/n)
+
+y
+
+
+--------------------MENU--------------------
+
+1. List of students who play both cricket and badminton
+2. List of students who play either cricket or badminton but not both
+3. List of students who play neither cricket nor badminton
+4. Number of students who play cricket and football but not badminton
+5. Exit
+
+Enter your Choice: 4
+
+
+Students who play cricket and football but not badminton:
+
+['A', 'C']
+Do you wish to Continue:(y/n)
+
+y
+
+
+--------------------MENU--------------------
+
+1. List of students who play both cricket and badminton
+2. List of students who play either cricket or badminton but not both
+3. List of students who play neither cricket nor badminton
+4. Number of students who play cricket and football but not badminton
+5. Exit
+
+Enter your Choice: 5
+
+
+
+Process finished with exit code 0
+
+Assignment2
+Enter the Number of students in the class
+10
+Enter the marks of the students NOTE: for absent students put -1 as marks
+
+25
+30
+25
+26
+25
+25
+12
+12
+26
+25
+
+
+--------------------MENU--------------------
+
+1. Total and Average Marks of the Class
+2. Highest and Lowest Marks in the Class
+3. Number of Students absent for the test
+4. Marks with Highest Frequency
+5. Exit
+
+Enter your choice
+1
+Total marks of FDS are 231  And average marks of FDS are  23.1
+
+do you wish to continue(y/n)
+y
+
+
+--------------------MENU--------------------
+
+1. Total and Average Marks of the Class
+2. Highest and Lowest Marks in the Class
+3. Number of Students absent for the test
+4. Marks with Highest Frequency
+5. Exit
+
+Enter your choice
+2
+For FDS exam Hightest score is  30  and Minimum score is  12
+
+do you wish to continue(y/n)
+y
+
+
+--------------------MENU--------------------
+
+1. Total and Average Marks of the Class
+2. Highest and Lowest Marks in the Class
+3. Number of Students absent for the test
+4. Marks with Highest Frequency
+5. Exit
+
+Enter your choice
+3
+Absent count for FDS exam is:  0
+
+do you wish to continue(y/n)
+y
+
+
+--------------------MENU--------------------
+
+1. Total and Average Marks of the Class
+2. Highest and Lowest Marks in the Class
+3. Number of Students absent for the test
+4. Marks with Highest Frequency
+5. Exit
+
+Enter your choice
+4
+The most frequently appeared marks are 25  and it occurred  5  times
+
+do you wish to continue(y/n)
+y
+
+
+--------------------MENU--------------------
+
+1. Total and Average Marks of the Class
+2. Highest and Lowest Marks in the Class
+3. Number of Students absent for the test
+4. Marks with Highest Frequency
+5. Exit
+
+Enter your choice
+5
+
+Process finished with exit code 0
+
+Assignment3
+
+Assignment4
+Enter the Number of students in the class
+10
+Enter the marks of the students NOTE: for absent students put -1 as marks
+
+25
+30
+25
+26
+25
+25
+12
+12
+26
+25
+
+
+--------------------MENU--------------------
+
+1. Total and Average Marks of the Class
+2. Highest and Lowest Marks in the Class
+3. Number of Students absent for the test
+4. Marks with Highest Frequency
+5. Exit
+
+Enter your choice
+1
+Total marks of FDS are 231  And average marks of FDS are  23.1
+
+do you wish to continue(y/n)
+y
+
+
+--------------------MENU--------------------
+
+1. Total and Average Marks of the Class
+2. Highest and Lowest Marks in the Class
+3. Number of Students absent for the test
+4. Marks with Highest Frequency
+5. Exit
+
+Enter your choice
+2
+For FDS exam Hightest score is  30  and Minimum score is  12
+
+do you wish to continue(y/n)
+y
+
+
+--------------------MENU--------------------
+
+1. Total and Average Marks of the Class
+2. Highest and Lowest Marks in the Class
+3. Number of Students absent for the test
+4. Marks with Highest Frequency
+5. Exit
+
+Enter your choice
+3
+Absent count for FDS exam is:  0
+
+do you wish to continue(y/n)
+y
+
+
+--------------------MENU--------------------
+
+1. Total and Average Marks of the Class
+2. Highest and Lowest Marks in the Class
+3. Number of Students absent for the test
+4. Marks with Highest Frequency
+5. Exit
+
+Enter your choice
+4
+The most frequently appeared marks are 25  and it occurred  5  times
+
+do you wish to continue(y/n)
+y
+
+
+--------------------MENU--------------------
+
+1. Total and Average Marks of the Class
+2. Highest and Lowest Marks in the Class
+3. Number of Students absent for the test
+4. Marks with Highest Frequency
+5. Exit
+
+Enter your choice
+5
+
+Process finished with exit code 0
+
+Assignment5
+
+Assignment6
+C:\Users\kaust\AppData\Local\Programs\Python\Python311\python.exe D:\College\practical_codes\se\DSL\Assignment6.py
+Enter number of students whose marks are to be displayed : 10
+Enter marks for 10 students (Press ENTER after every students marks):
+12
+12
+15
+20
+22
+26
+29
+12
+14
+13
+The marks of 10 students are :
+[12, 12, 15, 20, 22, 26, 29, 12, 14, 13]
+
+---------------MENU---------------
+1. Selection Sort of the marks
+2. Bubble Sort of the marks
+3. Exit
+
+
+Enter your choice (from 1 to 3) : 1
+Marks of students after performing Selection Sort on the list :
+12
+12
+12
+13
+14
+15
+20
+22
+26
+29
+
+Do you want to display top marks from the list (yes/no) : yes
+Top 10 Marks are :
+29
+26
+22
+20
+15
+14
+13
+12
+12
+12
+
+---------------MENU---------------
+1. Selection Sort of the marks
+2. Bubble Sort of the marks
+3. Exit
+
+
+Enter your choice (from 1 to 3) : 2
+Marks of students after performing Bubble Sort on the list :
+12
+12
+12
+13
+14
+15
+20
+22
+26
+29
+
+Do you want to display top five marks from the list (yes/no) : yes
+Top 10 Marks are :
+29
+26
+22
+20
+15
+14
+13
+12
+12
+12
+
+---------------MENU---------------
+1. Selection Sort of the marks
+2. Bubble Sort of the marks
+3. Exit
+
+
+Enter your choice (from 1 to 3) : 3
+
+Thanks for using this program!!
+
+Process finished with exit code 0
