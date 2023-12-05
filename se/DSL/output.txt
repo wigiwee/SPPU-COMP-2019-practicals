@@ -146,6 +146,9 @@ Enter your Choice: 5
 
 Process finished with exit code 0
 
+
+==================================================================================
+
 Assignment2
 Enter the Number of students in the class
 10
@@ -240,7 +243,31 @@ Enter your choice
 
 Process finished with exit code 0
 
+
+
+==================================================================================
+
+
 Assignment3
+Unique books:
+{'title': 'The Lord of the Rings', 'author': 'J.R.R. Tolkien', 'cost': 350}
+{'title': 'The Hobbit', 'author': 'J.R.R. Tolkien', 'cost': 250}
+{'title': "Harry Potter and the Sorcerer's Stone", 'author': 'J.K. Rowling', 'cost': 400}
+{'title': "The Hitchhiker's Guide to the Galaxy", 'author': 'Douglas Adams', 'cost': 300}
+{'title': 'Pride and Prejudice', 'author': 'Jane Austen', 'cost': 200}
+{'title': 'To Kill a Mockingbird', 'author': 'Harper Lee', 'cost': 250}
+
+Books sorted by cost:
+{'title': 'Pride and Prejudice', 'author': 'Jane Austen', 'cost': 200}
+{'title': 'The Hobbit', 'author': 'J.R.R. Tolkien', 'cost': 250}
+{'title': 'To Kill a Mockingbird', 'author': 'Harper Lee', 'cost': 250}
+{'title': "The Hitchhiker's Guide to the Galaxy", 'author': 'Douglas Adams', 'cost': 300}
+{'title': 'The Lord of the Rings', 'author': 'J.R.R. Tolkien', 'cost': 350}
+{'title': 'The Lord of the Rings', 'author': 'J.R.R. Tolkien', 'cost': 350}
+{'title': "Harry Potter and the Sorcerer's Stone", 'author': 'J.K. Rowling', 'cost': 400}
+
+==================================================================================
+
 
 Assignment4
 Enter the Number of students in the class
@@ -336,9 +363,34 @@ Enter your choice
 
 Process finished with exit code 0
 
+
+
+==================================================================================
+
+
+
 Assignment5
 
+C:\Users\kaust\AppData\Local\Programs\Python\Python311\python.exe D:\College\practical_codes\se\DSL\Assignment5.py 
+Enter the friend's name to search: Alice
+Friend found: 1234567890
+Friend found using recursive binary search
+
+Enter the friend's name to search: Bob
+Friend found: 9876543210
+Friend found using non-recursive binary search
+
+Process finished with exit code 0
+
+
+
+
+==================================================================================
+
+
 Assignment6
+
+
 C:\Users\kaust\AppData\Local\Programs\Python\Python311\python.exe D:\College\practical_codes\se\DSL\Assignment6.py
 Enter number of students whose marks are to be displayed : 10
 Enter marks for 10 students (Press ENTER after every students marks):
@@ -430,3 +482,587 @@ Enter your choice (from 1 to 3) : 3
 Thanks for using this program!!
 
 Process finished with exit code 0
+
+
+==================================================================================
+
+
+Assignment7
+
+
+
+------------------------------------------------------------------------------------
+ Screen this way
+------------------------------------------------------------------------------------
+S01 :|___| S02 :|___| S03 :|___| S04 :|___| S05 :|___| S06 :|___| S07 :|___|
+S08 :|___| S09 :|___| S10 :|___| S11 :|___| S12 :|___| S13 :|___| S14 :|___|
+S15 :|___| S16 :|___| S17 :|___| S18 :|___| S19 :|___| S20 :|___| S21 :|___|
+S22 :|___| S23 :|___| S24 :|___| S25 :|___| S26 :|___| S27 :|___| S28 :|___|
+S29 :|___| S30 :|___| S31 :|___| S32 :|___| S33 :|___| S34 :|___| S35 :|___|
+S36 :|___| S37 :|___| S38 :|___| S39 :|___| S40 :|___| S41 :|___| S42 :|___|
+S43 :|___| S44 :|___| S45 :|___| S46 :|___| S47 :|___| S48 :|___| S49 :|___|
+S50 :|___| S51 :|___| S52 :|___| S53 :|___| S54 :|___| S55 :|___| S56 :|___|
+S57 :|___| S58 :|___| S59 :|___| S60 :|___| S61 :|___| S62 :|___| S63 :|___|
+S64 :|___| S65 :|___| S66 :|___| S67 :|___| S68 :|___| S69 :|___| S70 :|___|
+*********************************************
+ CINEMAX MOVIE THEATRE
+*********************************************
+
+Enter Choice
+1.Current SeatStatus
+2.Book Seat
+3.Available Seat
+4.CancelSeat
+2
+
+
+
+Enter seat number to be booked
+25
+Enter your ID number
+101
+Seat 25 booked!
+
+Do you want to perform any other operation : (y/n)
+y
+
+------------------------------------------------------------------------------------
+ Screen this way
+------------------------------------------------------------------------------------
+S01 :|___| S02 :|___| S03 :|___| S04 :|___| S05 :|___| S06 :|___| S07 :|___|
+S08 :|___| S09 :|___| S10 :|___| S11 :|___| S12 :|___| S13 :|___| S14 :|___|
+S15 :|___| S16 :|___| S17 :|___| S18 :|___| S19 :|___| S20 :|___| S21 :|___|
+S22 :|___| S23 :|___| S24 :|___| S25 :|_B_| S26 :|___| S27 :|___| S28 :|___|
+S29 :|___| S30 :|___| S31 :|___| S32 :|___| S33 :|___| S34 :|___| S35 :|___|
+S36 :|___| S37 :|___| S38 :|___| S39 :|___| S40 :|___| S41 :|___| S42 :|___|
+S43 :|___| S44 :|___| S45 :|___| S46 :|___| S47 :|___| S48 :|___| S49 :|___|
+S50 :|___| S51 :|___| S52 :|___| S53 :|___| S54 :|___| S55 :|___| S56 :|___|
+S57 :|___| S58 :|___| S59 :|___| S60 :|___| S61 :|___| S62 :|___| S63 :|___|
+S64 :|___| S65 :|___| S66 :|___| S67 :|___| S68 :|___| S69 :|___| S70 :|___|
+*********************************************
+ CINEMAX MOVIE THEATRE
+*********************************************
+
+Enter Choice
+1.Current SeatStatus
+2.Book Seat
+3.Available Seat
+4.CancelSeat
+2
+
+
+
+Enter seat number to be booked
+26
+Enter your ID number
+102
+Seat 26 booked!
+
+Do you want to perform any other operation : (y/n)
+y
+
+------------------------------------------------------------------------------------
+ Screen this way
+------------------------------------------------------------------------------------
+S01 :|___| S02 :|___| S03 :|___| S04 :|___| S05 :|___| S06 :|___| S07 :|___|
+S08 :|___| S09 :|___| S10 :|___| S11 :|___| S12 :|___| S13 :|___| S14 :|___|
+S15 :|___| S16 :|___| S17 :|___| S18 :|___| S19 :|___| S20 :|___| S21 :|___|
+S22 :|___| S23 :|___| S24 :|___| S25 :|_B_| S26 :|_B_| S27 :|___| S28 :|___|
+S29 :|___| S30 :|___| S31 :|___| S32 :|___| S33 :|___| S34 :|___| S35 :|___|
+S36 :|___| S37 :|___| S38 :|___| S39 :|___| S40 :|___| S41 :|___| S42 :|___|
+S43 :|___| S44 :|___| S45 :|___| S46 :|___| S47 :|___| S48 :|___| S49 :|___|
+S50 :|___| S51 :|___| S52 :|___| S53 :|___| S54 :|___| S55 :|___| S56 :|___|
+S57 :|___| S58 :|___| S59 :|___| S60 :|___| S61 :|___| S62 :|___| S63 :|___|
+S64 :|___| S65 :|___| S66 :|___| S67 :|___| S68 :|___| S69 :|___| S70 :|___|
+*********************************************
+ CINEMAX MOVIE THEATRE
+*********************************************
+
+Enter Choice
+1.Current SeatStatus
+2.Book Seat
+3.Available Seat
+4.CancelSeat
+3
+
+
+
+
+
+------------------------------------------------------------------------------------
+ Screen this way
+------------------------------------------------------------------------------------
+S01 :|___| S02 :|___| S03 :|___| S04 :|___| S05 :|___| S06 :|___| S07 :|___|
+S08 :|___| S09 :|___| S10 :|___| S11 :|___| S12 :|___| S13 :|___| S14 :|___|
+S15 :|___| S16 :|___| S17 :|___| S18 :|___| S19 :|___| S20 :|___| S21 :|___|
+S22 :|___| S23 :|___| S24 :|___| S25 : S26 : S27 :|___| S28 :|___|
+S29 :|___| S30 :|___| S31 :|___| S32 :|___| S33 :|___| S34 :|___| S35 :|___|
+S36 :|___| S37 :|___| S38 :|___| S39 :|___| S40 :|___| S41 :|___| S42 :|___|
+S43 :|___| S44 :|___| S45 :|___| S46 :|___| S47 :|___| S48 :|___| S49 :|___|
+S50 :|___| S51 :|___| S52 :|___| S53 :|___| S54 :|___| S55 :|___| S56 :|___|
+S57 :|___| S58 :|___| S59 :|___| S60 :|___| S61 :|___| S62 :|___| S63 :|___|
+S64 :|___| S65 :|___| S66 :|___| S67 :|___| S68 :|___| S69 :|___| S70 :|___|
+Do you want to perform any other operation : (y/n)
+y
+
+------------------------------------------------------------------------------------
+ Screen this way
+------------------------------------------------------------------------------------
+S01 :|___| S02 :|___| S03 :|___| S04 :|___| S05 :|___| S06 :|___| S07 :|___|
+S08 :|___| S09 :|___| S10 :|___| S11 :|___| S12 :|___| S13 :|___| S14 :|___|
+S15 :|___| S16 :|___| S17 :|___| S18 :|___| S19 :|___| S20 :|___| S21 :|___|
+S22 :|___| S23 :|___| S24 :|___| S25 :|_B_| S26 :|_B_| S27 :|___| S28 :|___|
+S29 :|___| S30 :|___| S31 :|___| S32 :|___| S33 :|___| S34 :|___| S35 :|___|
+S36 :|___| S37 :|___| S38 :|___| S39 :|___| S40 :|___| S41 :|___| S42 :|___|
+S43 :|___| S44 :|___| S45 :|___| S46 :|___| S47 :|___| S48 :|___| S49 :|___|
+S50 :|___| S51 :|___| S52 :|___| S53 :|___| S54 :|___| S55 :|___| S56 :|___|
+S57 :|___| S58 :|___| S59 :|___| S60 :|___| S61 :|___| S62 :|___| S63 :|___|
+S64 :|___| S65 :|___| S66 :|___| S67 :|___| S68 :|___| S69 :|___| S70 :|___|
+*********************************************
+ CINEMAX MOVIE THEATRE
+*********************************************
+
+Enter Choice
+1.Current SeatStatus
+2.Book Seat
+3.Available Seat
+4.CancelSeat
+4
+Enter seat number to cancel booking
+25
+Enter you ID
+101
+Seat Cancelled!
+
+Do you want to perform any other operation : (y/n)
+y
+
+------------------------------------------------------------------------------------
+ Screen this way
+------------------------------------------------------------------------------------
+S01 :|___| S02 :|___| S03 :|___| S04 :|___| S05 :|___| S06 :|___| S07 :|___|
+S08 :|___| S09 :|___| S10 :|___| S11 :|___| S12 :|___| S13 :|___| S14 :|___|
+S15 :|___| S16 :|___| S17 :|___| S18 :|___| S19 :|___| S20 :|___| S21 :|___|
+S22 :|___| S23 :|___| S24 :|___| S25 :|___| S26 :|_B_| S27 :|___| S28 :|___|
+S29 :|___| S30 :|___| S31 :|___| S32 :|___| S33 :|___| S34 :|___| S35 :|___|
+S36 :|___| S37 :|___| S38 :|___| S39 :|___| S40 :|___| S41 :|___| S42 :|___|
+S43 :|___| S44 :|___| S45 :|___| S46 :|___| S47 :|___| S48 :|___| S49 :|___|
+S50 :|___| S51 :|___| S52 :|___| S53 :|___| S54 :|___| S55 :|___| S56 :|___|
+S57 :|___| S58 :|___| S59 :|___| S60 :|___| S61 :|___| S62 :|___| S63 :|___|
+S64 :|___| S65 :|___| S66 :|___| S67 :|___| S68 :|___| S69 :|___| S70 :|___|
+*********************************************
+ CINEMAX MOVIE THEATRE
+*********************************************
+
+Enter Choice
+1.Current SeatStatus
+2.Book Seat
+3.Available Seat
+4.CancelSeat
+1
+
+------------------------------------------------------------------------------------
+ Screen this way
+------------------------------------------------------------------------------------
+S01 :|___| S02 :|___| S03 :|___| S04 :|___| S05 :|___| S06 :|___| S07 :|___|
+S08 :|___| S09 :|___| S10 :|___| S11 :|___| S12 :|___| S13 :|___| S14 :|___|
+S15 :|___| S16 :|___| S17 :|___| S18 :|___| S19 :|___| S20 :|___| S21 :|___|
+S22 :|___| S23 :|___| S24 :|___| S25 :|___| S26 :|_B_| S27 :|___| S28 :|___|
+S29 :|___| S30 :|___| S31 :|___| S32 :|___| S33 :|___| S34 :|___| S35 :|___|
+S36 :|___| S37 :|___| S38 :|___| S39 :|___| S40 :|___| S41 :|___| S42 :|___|
+S43 :|___| S44 :|___| S45 :|___| S46 :|___| S47 :|___| S48 :|___| S49 :|___|
+S50 :|___| S51 :|___| S52 :|___| S53 :|___| S54 :|___| S55 :|___| S56 :|___|
+S57 :|___| S58 :|___| S59 :|___| S60 :|___| S61 :|___| S62 :|___| S63 :|___|
+S64 :|___| S65 :|___| S66 :|___| S67 :|___| S68 :|___| S69 :|___| S70 :|___|
+Do you want to perform any other operation : (y/n)
+n
+
+
+
+==================================================================================
+
+
+
+Assignment8.py
+
+Enter:
+1. List A
+2. List B
+3. Concatenate
+0. Exit
+1
+
+List A:
+Enter:
+1. Add
+2. Delete
+3. Member's Count
+4. Display
+5. Reverse the List
+0. Prev Menu
+1
+
+Enter:
+A. Add President
+B. Add Secretary
+C. Add Member
+A
+Enter PRN: 001
+Enter Name: abc
+
+Enter:
+1. Add
+2. Delete
+3. Member's Count
+4. Display
+5. Reverse the List
+0. Prev Menu
+1
+
+Enter:
+A. Add President
+B. Add Secretary
+C. Add Member
+B
+Enter PRN: 002
+Enter Name: PQR
+Element Inserted at Last
+
+Enter:
+1. Add
+2. Delete
+3. Member's Count
+4. Display
+5. Reverse the List
+0. Prev Menu
+1
+
+Enter:
+A. Add President
+B. Add Secretary
+C. Add Member
+C
+Enter PRN: 003
+Enter Name: member1
+Member Inserted at Position: 2
+
+Enter:
+1. Add
+2. Delete
+3. Member's Count
+4. Display
+5. Reverse the List
+0. Prev Menu
+4
+President: 1 ù abc -> 3 ù member1 -> Secretary: 2 ù PQR -> NULL
+
+Enter:
+1. Add
+2. Delete
+3. Member's Count
+4. Display
+5. Reverse the List
+0. Prev Menu
+0
+Enter:
+1. List A
+2. List B
+3. Concatenate
+0. Exit
+3
+President: 1 ù abc -> 3 ù member1 -> Secretary: 2 ù PQR -> NULL
+Enter:
+1. List A
+2. List B
+3. Concatenate
+0. Exit
+0
+
+
+==================================================================================
+
+Assignment9
+
+
+hello
+
+Converted String : hello
+
+h is pushed on stack ...
+e is pushed on stack ...
+l is pushed on stack ...
+l is pushed on stack ...
+o is pushed on stack ...
+
+String is not palindrome...
+
+Reverse string is : olleh
+
+Enter string to be reversed and check is it palindrome or not :
+
+racecar
+
+Converted String : racecar
+
+r is pushed on stack ...
+a is pushed on stack ...
+c is pushed on stack ...
+e is pushed on stack ...
+c is pushed on stack ...
+a is pushed on stack ...
+r is pushed on stack ...
+
+String is palindrome...
+
+Reverse string is : racecar
+
+
+
+==================================================================================
+
+
+
+Assignment10.cpp
+
+PS D:\College\practical_codes\se\DSL> ./a.exe
+
+        !! Parenthesis Checker..!!!!
+
+Enter the expression to check whether it is in well form or not :  (hello))
+
+
+Expression is well parenthesised...
+
+PS D:\College\practical_codes\se\DSL> ./a.exe
+
+        !! Parenthesis Checker..!!!!
+
+Enter the expression to check whether it is in well form or not :  helllo
+
+Sorry !!! Invalid Expression or not in well parenthesized....
+
+==================================================================================
+
+
+Assignment11.cpp
+
+ 1.Insert Job
+ 2.Delete Job
+ 3.Display
+ 4.Exit
+ Enter your choice : 1
+
+ Enter data :
+001
+
+
+ 1.Insert Job
+ 2.Delete Job
+ 3.Display
+ 4.Exit
+ Enter your choice : 1
+
+ Enter data :
+002
+
+
+ 1.Insert Job
+ 2.Delete Job
+ 3.Display
+ 4.Exit
+ Enter your choice : 3
+
+ Queue contains :
+
+1 2
+ 1.Insert Job
+ 2.Delete Job
+ 3.Display
+ 4.Exit
+ Enter your choice : 4
+
+ Exiting Program.....
+
+==================================================================================
+
+
+Assignment12.cpp
+
+PS D:\College\practical_codes\se\DSL> g++ Assignment12.cpp
+PS D:\College\practical_codes\se\DSL> ./a.exe
+Dequeue: 10
+Dequeue: 5
+Dequeue: 5
+
+==================================================================================
+
+
+Assignment13.cpp
+
+
+
+ 1.Insert Job
+ 2.Delete Job
+ 3.Display
+ 4.Exit
+ Enter your choice : 1
+
+ Enter data :
+111
+
+
+ 1.Insert Job
+ 2.Delete Job
+ 3.Display
+ 4.Exit
+ Enter your choice : 3
+
+ Queue contains :
+
+111
+ 1.Insert Job
+ 2.Delete Job
+ 3.Display
+ 4.Exit
+ Enter your choice : 2
+
+ Deleted Element = 111
+
+Remaining Jobs :
+
+
+ 1.Insert Job
+ 2.Delete Job
+ 3.Display
+ 4.Exit
+ Enter your choice : 1
+
+ Enter data :
+111
+
+
+ 1.Insert Job
+ 2.Delete Job
+ 3.Display
+ 4.Exit
+ Enter your choice :
+ Enter data :
+
+
+PS D:\College\practical_codes\se\DSL> ./a.exe
+
+ 1.Insert Job
+ 2.Delete Job
+ 3.Display
+ 4.Exit
+ Enter your choice : 1
+
+ Enter data :
+001
+
+
+ 1.Insert Job
+ 2.Delete Job
+ 3.Display
+ 4.Exit
+ Enter your choice : 1
+
+ Enter data :
+002
+
+
+ 1.Insert Job
+ 2.Delete Job
+ 3.Display
+ 4.Exit
+ Enter your choice : 3
+
+ Queue contains :
+
+1 2
+ 1.Insert Job
+ 2.Delete Job
+ 3.Display
+ 4.Exit
+ Enter your choice : 4
+
+ Exiting Program.....
+PS D:\College\practical_codes\se\DSL> g++ Assignment13.cpp
+g++.exe: error: Assignment13.cpp: No such file or directory
+g++.exe: fatal error: no input files
+compilation terminated.
+PS D:\College\practical_codes\se\DSL> g++ Assignment13.cpp
+PS D:\College\practical_codes\se\DSL> ./a.exe
+
+
+****DEQUEUE OPERATION****
+
+1-Insert at beginning
+2-Insert at end
+3_Display
+4_Deletion from front
+5-Deletion from rear
+6_Exit
+Enter your choice<1-4>:1
+Enter the element to be inserted:10
+
+
+****DEQUEUE OPERATION****
+
+1-Insert at beginning
+2-Insert at end
+3_Display
+4_Deletion from front
+5-Deletion from rear
+6_Exit
+Enter your choice<1-4>:2
+Enter the element to be inserted:12
+
+
+****DEQUEUE OPERATION****
+
+1-Insert at beginning
+2-Insert at end
+3_Display
+4_Deletion from front
+5-Deletion from rear
+6_Exit
+Enter your choice<1-4>:3
+10 12
+
+****DEQUEUE OPERATION****
+
+1-Insert at beginning
+2-Insert at end
+3_Display
+4_Deletion from front
+5-Deletion from rear
+6_Exit
+Enter your choice<1-4>:4
+The deleted element is 10
+
+****DEQUEUE OPERATION****
+
+1-Insert at beginning
+2-Insert at end
+3_Display
+4_Deletion from front
+5-Deletion from rear
+6_Exit
+Enter your choice<1-4>:5
+The deleted element is -336483362
+
+****DEQUEUE OPERATION****
+
+1-Insert at beginning
+2-Insert at end
+3_Display
+4_Deletion from front
+5-Deletion from rear
+6_Exit
+Enter your choice<1-4>:6
+
+
+
+
+
