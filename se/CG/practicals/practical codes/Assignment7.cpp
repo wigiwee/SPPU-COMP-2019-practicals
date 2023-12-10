@@ -1,9 +1,9 @@
 #include<conio.h>
-#include<iostream.h>
+#include<iostream>
 #include<graphics.h>
 #include<stdlib.h>
 #include<dos.h>
-void main(){
+int main(){
 int gd=DETECT,gm;
 initgraph(&gd,&gm,"C:\\TurboC3\\BGI");
 int xmov,x,y;
@@ -37,4 +37,5 @@ cleardevice();
 }
 getch();
 closegraph();
+return 0;
 }

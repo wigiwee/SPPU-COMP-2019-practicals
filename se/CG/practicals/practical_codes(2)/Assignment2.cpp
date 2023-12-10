@@ -60,6 +60,7 @@ x = xh;
 y = y1+ m*(xh-x1);
 }
 //Check which point we had selected earlier as temp, and replace its co-ordinates
+
 if(temp == outcode1){
 x1 = x;
 y1 = y;

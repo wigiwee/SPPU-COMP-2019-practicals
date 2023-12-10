@@ -3,6 +3,7 @@
 #include<graphics.h>
 #include<stdlib.h>
 #include<math.h>
+using namespace std;
 class trans
 {
 public:
@@ -84,9 +85,9 @@ orico[1][i]*sin(theta);
 rotco[1][i]=orico[0][i]*sin(theta)+orico[1][i]*cos(theta);
 }
 }
-void main()
+int main()
 {
-clrscr();
+//clrscr();
 int c;
 int gd= DETECT, gm;
 initgraph(&gd,&gm,"C:\\TurboC3\\BGI");
@@ -99,8 +100,7 @@ for(int i=0;i<3;i++)
 {
 for(int j=0;j<3;j++)
 {
-cout<<"ori"<<" "<<i<<" "<<j<<"->"<<orico[i][j]<<"
-";
+cout<<"ori"<<" "<<i<<" "<<j<<"->"<<orico[i][j]<<"";
 }
 cout<<endl;
 }
@@ -128,4 +128,5 @@ default:
 cout<<("You have written wrong Choice");
 }
 getch();
+return 0;
 }

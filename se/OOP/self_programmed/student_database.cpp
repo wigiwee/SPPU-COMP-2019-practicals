@@ -33,7 +33,6 @@ class info {
 			int* rno=new int[50];
 			long int* t_no=new long int[50];
 			long int* d_no=new long int[50];
-
 		}
 
 		info(int r,long int t) {			//parameterized constructor
