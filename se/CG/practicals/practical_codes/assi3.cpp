@@ -67,7 +67,7 @@ else
 p=p+4*(x-y)+10;
 y=y-1;
 }
-// delay(20);
+delay(20);
 }
 }
 int main()

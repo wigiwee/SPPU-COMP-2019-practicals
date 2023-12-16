@@ -32,7 +32,7 @@ int main()
 	
 	//f.open("D:\\inputfile.txt");
 
-	f.open("D:\\inputfile.txt",ios::in);
+	f.open("C:/Users/kaust/Desktop/inputfile.txt",ios::out);
 	for(i=0;i<n;i++)
 	{
 		f.read((char*) &e[i],sizeof(e[i]));
@@ -52,7 +52,7 @@ int main()
 	}
 	f.close();
 	
-	f.open("D:\\inputfile.txt",ios::in);
+	f.open("C:/Users/kaust/Desktop/inputfile.txt",ios::in);
 	
 	cout<<"\n employee information is as follows: ";
 	

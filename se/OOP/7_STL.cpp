@@ -9,7 +9,7 @@ and cost)
 
 using namespace std;
 
-class Item       
+class Item
 {
       public:   
         char name[10];
@@ -46,55 +46,6 @@ bool compare(const Item &i1, const Item &i2)
    //if (i1.name != i2.name) return i1.cost < i2.cost;
    return i1.cost < i2.cost;
 }
-
-int main()
-{
-    int ch;
-      do
-    {  
-        cout<<"\n***** Menu *****";
-        cout<<"\n1.Insert";
-        cout<<"\n2.Display";
-        cout<<"\n3.Search";
-        cout<<"\n4.Sort";
-        cout<<"\n5.Delete";
-        cout<<"\n6.Exit";
-        cout<<"\nEnter your choice:";
-        cin>>ch;
-       
-        switch(ch)
-        {
-               case 1:
-                          insert();
-                          break;
-                   
-               case 2:
-                          display();
-                          break;
-                   
-               case 3:
-                         search();
-                         break;
-                              
-               case 4:
-                        sort(o1.begin(),o1.end(),compare);
-                        cout<<"\n\n Sorted on Cost";
-                        display();
-                        break;
-                  
-               case 5:
-                       dlt();
-                        break;
-                     
-               case 6:
-                        exit(0);
-        }
-   
-    }while(ch!=7);
-
-      return 0;
-}
-
 void insert()
 {
     Item i1;
@@ -157,3 +108,53 @@ void dlt()
          cout<<"\nDeleted.";
     }
 }
+
+int main()
+{
+    int ch;
+      do
+    {  
+        cout<<"\n***** Menu *****";
+        cout<<"\n1.Insert";
+        cout<<"\n2.Display";
+        cout<<"\n3.Search";
+        cout<<"\n4.Sort";
+        cout<<"\n5.Delete";
+        cout<<"\n6.Exit";
+        cout<<"\nEnter your choice:";
+        cin>>ch;
+       
+        switch(ch)
+        {
+               case 1:
+                          insert();
+                          break;
+                   
+               case 2:
+                          display();
+                          break;
+                   
+               case 3:
+                         search();
+                         break;
+                              
+               case 4:
+                        sort(o1.begin(),o1.end(),compare);
+                        cout<<"\n\n Sorted on Cost";
+                        display();
+                        break;
+                  
+               case 5:
+                       dlt();
+                        break;
+                     
+               case 6:
+                        exit(0);
+        }
+   
+    }while(ch!=7);
+
+      return 0;
+}
+
+

@@ -59,8 +59,7 @@ y = y1+ m*(xl-x1);
 x = xh;
 y = y1+ m*(xh-x1);
 }
-//Check which point we had selected earlier as temp, and replace its co-ordinates
-
+//Check which point we had selected earlier as temp, and replace its coordinates
 if(temp == outcode1){
 x1 = x;
 y1 = y;
@@ -76,6 +75,6 @@ setcolor(WHITE);
 cout<<"After clipping:";
 if(accept)
 line(x1,y1,x2,y2);
-return 0;
 closegraph();
+return 0;
 }
