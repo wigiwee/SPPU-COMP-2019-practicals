@@ -1,5 +1,3 @@
-Absolutely! Here's the README file with even more emojis:
-
 ---
 
 # 📚 SPPU University Paper Pattern 2019 Practical Code Repository 🖥️
