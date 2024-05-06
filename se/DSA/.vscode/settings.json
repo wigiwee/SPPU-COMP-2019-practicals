@@ -1,0 +1,19 @@
+{
+    "python.REPL.enableREPLSmartSend": false,
+    "cSpell.words": [
+        "Kaustubh",
+        "kolhe"
+    ],
+    "files.associations": {
+        "*.ejs": "html",
+        "array": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "span": "cpp",
+        "ostream": "cpp"
+    },
+    "lldb.showDisassembly": "auto",
+    "lldb.dereferencePointers": true,
+    "lldb.consoleMode": "evaluate",
+    "C_Cpp.errorSquiggles": "enabled"
+}
