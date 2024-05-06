@@ -32,7 +32,7 @@ These codes are provided strictly for educational purposes. The authors of this 
 
 ## Contact
 
-For any inquiries or issues regarding this repository, feel free to reach out to [your contact information here]. 📧📞
+For any inquiries or issues regarding this repository, feel free to reach out to [kaustubhk375@gmail.com]. 📧📞
 
 Happy coding! 🚀✨👨‍💻🔍
 
