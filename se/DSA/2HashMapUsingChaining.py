@@ -1,4 +1,4 @@
-TABLE_SIZE = 20
+TABLE_SIZE = 10
 
 elements = [None]*TABLE_SIZE
 chain = [-1]*TABLE_SIZE    
