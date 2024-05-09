@@ -57,9 +57,9 @@ void BST::displayBookTree(){
         cout<<"l_____Chapter: "<<root->child[i]->label<<endl;
         for(int j = 0 ; j <root->child[i]->ch_count ; j++){
             cout<<"l\tl_____Section: "<<root->child[i]->child[j]->label<<endl;
-                for(int k = 0 ; k <root->child[i]->child[j]->ch_count; k ++){
-                    cout<<"l\tl\tl_____Sub-section: "<<root->child[i]->child[j]->child[k]->label<<endl;
-                }
+            for(int k = 0 ; k <root->child[i]->child[j]->ch_count; k ++){
+                cout<<"l\tl\tl_____Sub-section: "<<root->child[i]->child[j]->child[k]->label<<endl;
+            }
         }
     }
 }

@@ -1,0 +1,22 @@
+enter no of process: 
+3
+enter process 1 arrival time: 
+0
+enter process 1 brust time: 
+9
+enter process 2 arrival time: 
+14 
+enter process 2 brust time: 
+4
+enter process 3 arrival time: 
+2
+enter process 3 brust time: 
+9
+
+pid  arrival  brust  complete turn waiting
+1  	 0	9	9	9	0
+2  	 1	4	13	12	8
+3  	 2	9	22	20	11
+
+average waiting time: 6.3333335
+average turnaround time:13.666667

@@ -5,12 +5,12 @@ using namespace std;
 struct node{
     string name;
     int time;
-    node * next;
+    struct node * next;
     int index;
 };
 
 class FlightPath{
-    node * adjacencyList[20];
+    struct node * adjacencyList[20];
     string cityName[20];
     int no_of_cities;
     int visited[20] ;
@@ -40,11 +40,11 @@ void FlightPath::getGraph(){
             cout<<"Is there a path between "<<cityName[i]<<" and "<<cityName[j]<<" (y/n)"<<endl;
             cin>>ch;
             if( ch == 'y'){
-                node* lastNode = adjacencyList[i];
+                struct node* lastNode = adjacencyList[i];
                 while(lastNode->next != nullptr){
                     lastNode = lastNode->next;
                 }
-                node *newNode =  new node;
+                struct node *newNode =  new struct  node;
                 newNode->index = j;
                 newNode->name = cityName[j];
                 newNode->next = nullptr;
@@ -57,11 +57,11 @@ void FlightPath::getGraph(){
 };
 
 void FlightPath::displayAdjacencyList(){
-    node* temp ;
+    struct node* temp ;
     for(int i = 0 ; i < no_of_cities; i++){
         temp = adjacencyList[i];
         while(temp->next != nullptr){
-            cout<<temp->name<<" =="<<temp->next->time<<">";
+            cout<<temp->name<<" =="<<temp->next->time<<"=>";
             temp = temp->next;
         }
         cout<<temp->name<<endl;
@@ -70,7 +70,7 @@ void FlightPath::displayAdjacencyList(){
 
 void FlightPath::DFS(int i  ){
     visited[i] =1;
-    node *temp = adjacencyList[i]->next;
+    struct node *temp = adjacencyList[i]->next;
     if(temp == nullptr) return;
     while( temp != nullptr) {
         if(visited[temp->index] == 1) {
@@ -94,7 +94,6 @@ void FlightPath::checkIfConnected(){
         }
     }
     cout<<"Graph is connected"<<endl;
-
 };
 
 int main(){
@@ -111,6 +110,7 @@ int main(){
             flightpath.getGraph();
         }else if (ch ==2)  {
             cout<<"\n"<<endl;
+            cout<<"Adjacency List of the graph: "<<endl;
             flightpath.displayAdjacencyList();
         }else if(ch ==3)  {
             cout<<"\n"<<endl;
@@ -118,7 +118,8 @@ int main(){
         }else if(ch == 4) break;
         else {
             cout<<"Enter a valid choice!!!"<<endl;
-        } 
+        }
     }
+    cout<<"Exiting program"<<endl;
     return 0;
 }

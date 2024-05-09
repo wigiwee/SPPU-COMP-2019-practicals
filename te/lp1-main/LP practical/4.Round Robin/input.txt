@@ -1,0 +1,14 @@
+Enter the number of processes: 3
+Enter time quantum: 2
+Enter arrival time for process P1: 0
+Enter burst time for process P1: 3
+Enter arrival time for process P2: 1
+Enter burst time for process P2: 3
+Enter arrival time for process P3: 2
+Enter burst time for process P3: 2
+PN	AT	BT	CT	WT	TAT
+P1	0	3	7	4	7
+P2	1	3	8	4	7
+P3	2	2	6	2	4
+Average waiting time = 3.3333333
+Average turn around time = 6.0
