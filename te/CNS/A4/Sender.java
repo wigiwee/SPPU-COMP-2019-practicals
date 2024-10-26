@@ -17,7 +17,7 @@ public class Sender {
             while (nextSeqNum < base + windowSize && nextSeqNum < totalPackets) {
                 String message = "Packet " + nextSeqNum;
                 byte[] buffer = message.getBytes();
-                DatagramPacket packet = new DatagramPacket(buffer, buffer.length, receiverAddress, 9876);
+                DatagramPacket packet = new DatagramPacket(buffer, buffer.length, receiverAddress, 8000);
                 socket.send(packet);
                 System.out.println("Sent: " + message);
                 nextSeqNum++;

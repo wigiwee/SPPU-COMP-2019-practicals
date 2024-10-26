@@ -5,7 +5,7 @@ import java.net.*;
 
 public class Receiver {
     public static void main(String[] args) throws IOException {
-        try (DatagramSocket socket = new DatagramSocket(8080)) {
+        try (DatagramSocket socket = new DatagramSocket(8000)) {
             int expectedSeqNum = 0;
 
             while (true) {
