@@ -1,0 +1,17 @@
+    START   100  # this is a comment 
+    READ    A   # assembler won't read this
+    READ    B
+LABLE   MOVER   AREG,   A
+    ADD AREG,   B
+    LTORG
+        ='5'
+    ='1
+    ='6'
+    MOVEM   AREG,   C
+    LTORG
+    ='2'
+    PRINT   C
+A   DS  1	
+B   DS  1
+C   DS  1
+    END
