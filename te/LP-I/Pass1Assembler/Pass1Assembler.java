@@ -2,7 +2,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -38,10 +37,10 @@ public class Pass1Assembler {
             System.exit(1);
         }
         
-        printOpcode();
+        // printOpcode();
         asm_code = assignLc();
         // print_asmcode();
-        print(asm_code);
+        // print(asm_code);
     }
 
     //assigning location counter
@@ -121,7 +120,6 @@ public class Pass1Assembler {
                 if( line.isEmpty() || line.startsWith("#"))
                     continue;
                 String wordsArray[] = line.split("\\s+");
-                System.out.println(Arrays.toString(wordsArray));
                 ArrayList<String> wordsArrayList = new ArrayList<>();
                 for (String word  : wordsArray) {
                     if(word.isEmpty() || isComment == true)
@@ -141,7 +139,7 @@ public class Pass1Assembler {
     }
     
     public void compile() throws IOException {
-        
+        String icStr, symStr, litStr;
         for(int i =0 ; i< asm_code.size(); i++){
             ArrayList<String> icLine = new ArrayList<>();
             ArrayList<String> symLine = new ArrayList<>();
@@ -150,39 +148,59 @@ public class Pass1Assembler {
             for(int j = 1; j< asm_code.get(i).size(); j++){
                 for(int k =0; k < opcode.size(); k++){
                     if(opcode.get(k)[0].equals(asm_code.get(i).get(j))){
-                        String icStr = "(" + opcode.get(k)[1] + "," + opcode.get(k)[2] + ")";
+                        icStr = "(" + opcode.get(k)[1] + "," + opcode.get(k)[2] + ")";
                         icLine.add(icStr);
                     }
                 }
 
                 if( asm_code.get(i).get(j).equals(opcode.get(16)[0]) || asm_code.get(i).get(j).equals(opcode.get(17)[0])){
+                    symStr = "(" + asm_code.get(i).get(0) + "," + asm_code.get(i).get(j) + ")";
+                    symLine.add(symStr);
+                }
+                if ( asm_code.get(i).get(j).matches("[A-Za-z]")){
+                    icStr = "(S," + asm_code.get(i).get(j) + ")";
+                    icLine.add(icStr);                       
+                }
+                if( asm_code.get(i).get(j).matches("[0-9]+")){
+                    icStr = "(C," + asm_code.get(i).get(j) + ")";
+                    litStr = "(" + asm_code.get(i).get(0) + "," + asm_code.get(i).get(j) + ")";
+                    icLine.add(icStr);
+                    literalLine.add(litStr);
+                }
+                if( asm_code.get(i).get(j).equals(opcode.get(15)[0]) || asm_code.get(i).get(j).equals(opcode.get(12)[0])){
                     String poolStr = "(" + asm_code.get(i).get(0) + "," + asm_code.get(i).get(j) + ")";
                     poolLine.add(poolStr);
                 }
-                if ( asm_code.get(i).get(j).matches("[A-Za-z]")){
-                    String symStr = "("+ asm_code.get(i).get(0) +","+ asm_code.get(i).get(j) +")";
-                    symLine.add(symStr);
-                }
-                if( asm_code.get(i).get(j).matches("[0-9]+")){
-                    String litStr = "(" + asm_code.get(i).get(0) + "," + asm_code.get(i).get(j) + ")";
-                    literalLine.add(litStr);
-                }
             }
+            
             ic.add(icLine);
             symbolTable.add(symLine);
             literalTable.add(literalLine);
-            poolTable.add(poolLine);
-            
+            poolTable.add(poolLine);   
         }
-        print(ic);
-        print(symbolTable);
-        print(literalTable);
-        print(poolTable);
-        
     }
 
     public static void main(String[] args) throws IOException {
         Pass1Assembler assembler = new Pass1Assembler("input.txt", "opcode.txt");
         assembler.compile();
+        
+        System.out.println("asmcode");
+        assembler.print(assembler.asm_code);
+        System.out.println();
+        System.out.println("opcode");
+        assembler.printOpcode();
+        System.out.println();
+
+        System.out.println("literal table");
+        assembler.print(assembler.literalTable);
+        System.out.println();
+
+        System.out.println("symbol table");
+        assembler.print(assembler.symbolTable);
+        System.out.println();
+
+        System.out.println("pool table");
+        assembler.print(assembler.poolTable);
+        System.out.println();
     }
 }
