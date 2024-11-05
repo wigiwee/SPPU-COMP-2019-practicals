@@ -2,82 +2,187 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Pass1Assembler {
     
-    // ArrayList<String[]> asm_code;
-    String asm_code[][] = {
-        {"","","","200",""},
-        {"","","MOVER","AREG","20"},
-        {"","","START","300",""},
-        {"","","","",""},
-        {"","","","",""},
-        {"","","","",""},
-        {"","","","",""},
-        {"","","","",""},
-    };
-
     ArrayList<String[]> opcode;
+    ArrayList<ArrayList<String>> asm_code;
+    ArrayList<ArrayList<String>> ic = new ArrayList<>();
+    ArrayList<ArrayList<String>> literalTable = new ArrayList<>();
+    ArrayList<ArrayList<String>> symbolTable = new ArrayList<>();
+    ArrayList<ArrayList<String>> poolTable =new ArrayList<>();
     int startValue;
 
-    public Pass1Assembler(String inputFilename, String opcodeFilename) throws FileNotFoundException, IOException{
+    public Pass1Assembler(String inputFilename, String opcodeFilename) {
+
+        try {
+            opcode = processOpcodeFile(opcodeFilename);        
+        } catch (FileNotFoundException e) {
+            System.out.println("input file with given name not found");
+            System.exit(1);    
+        } catch (IOException e){
+            System.out.println("Cannot read from the given input file");
+            System.exit(1);
+        }
+
+        try {
+            asm_code = processInputFile(inputFilename);        
+        } catch (FileNotFoundException e) {
+            System.out.println("opcode file with given name not found");    
+            System.exit(1);    
+        } catch (IOException e){
+            System.out.println("Cannot read from the given opcode file");
+            System.exit(1);
+        }
         
-        //reading opcode from opcode file
-        opcode = new ArrayList<>();
-        FileReader opcodeReader = new FileReader(opcodeFilename);
+        printOpcode();
+        asm_code = assignLc();
+        // print_asmcode();
+        print(asm_code);
+    }
+
+    //assigning location counter
+    public ArrayList<ArrayList<String>> assignLc(){
+        ArrayList<ArrayList<String>> asmcode_withLc = asm_code;
+        startValue = 0;
+        for( int i =0 ; i < asmcode_withLc.size(); i++){
+            for( int j =0; j< asmcode_withLc.get(i).size(); j++){
+                if(asmcode_withLc.get(i).get(j).equals("START"))
+                    startValue = Integer.parseInt(asmcode_withLc.get(i).get(j+1));
+                    break;
+            }
+            if(startValue != 0)
+                asmcode_withLc.get(i).addFirst(Integer.toString(startValue++));
+        }
+        return asmcode_withLc;
+    }
+
+    //printing opcode
+    public void printOpcode(){
+        System.out.println("----------------------------------");
+        System.out.println("opcode Chart :");
+        for (String[] code : opcode) {
+            System.out.println(Arrays.toString(code));
+        }
+    }
+
+    //printing asm_code (this function is not used anymore)
+    public void print_asmcode(){
+        System.out.println("----------------------------------");
+        System.out.println("asmcode :");
+        for (ArrayList<String> line : asm_code) {
+            for (String word :  line)
+                System.out.print(word+" ");       
+            System.out.println();
+        }
+    }
+
+    //printing general list structure
+    public void print(ArrayList<ArrayList<String>> list){
+        System.out.println("======================================");
+        for (ArrayList<String> line : list) {
+            for (String word :  line)
+                System.out.print(word+" ");       
+            System.out.println();
+        }
+    }
+
+    //reading opcode from opcode file
+    public ArrayList<String[]> processOpcodeFile(String filename) throws FileNotFoundException, IOException{
+        ArrayList<String[]> opcodeArrayList = new ArrayList<>();
+        FileReader opcodeReader = new FileReader(filename);
 
         try (BufferedReader opcodeBufferedReader = new BufferedReader(opcodeReader)) {
             while(opcodeBufferedReader.ready()){
-                opcode.add(opcodeBufferedReader.readLine().split(" "));
+                String line = opcodeBufferedReader.readLine();
+                if(line.isBlank())
+                    continue;
+                String[] lineArray = line.split(" "); 
+                for(int i =0; i< lineArray.length; i++)
+                    lineArray[i] = lineArray[i].trim();
+                opcodeArrayList.add(lineArray);
             }
-        }        
+        }
+        return opcodeArrayList;
+    }
 
-        // //printing opcode
-        // for (String[] test : opcode) {
-        //     System.out.println(Arrays.toString(test));
-        // }
+    //reading input asm code from input file and also removing comments
+    public ArrayList<ArrayList<String>> processInputFile(String filename) throws FileNotFoundException, IOException{
+        ArrayList<ArrayList<String>> asmcode = new ArrayList<>();
+        FileReader asmFileReader = new FileReader(filename);
+        
+        boolean isComment = false;
+        try (BufferedReader asmFileBufferedReader = new BufferedReader(asmFileReader)) {
+            while(asmFileBufferedReader.ready()){
+                String line = asmFileBufferedReader.readLine();
+                if( line.isEmpty() || line.startsWith("#"))
+                    continue;
+                String wordsArray[] = line.split("\\s+");
+                System.out.println(Arrays.toString(wordsArray));
+                ArrayList<String> wordsArrayList = new ArrayList<>();
+                for (String word  : wordsArray) {
+                    if(word.isEmpty() || isComment == true)
+                        continue;
+                    if(word.startsWith("#")){
+                        isComment = true;
+                        continue;
+                    }
+                    wordsArrayList.add(word);
+                }
+                isComment = false;
+                asmcode.add(wordsArrayList);
+            }
+        }
+        return asmcode;
 
-        //reading input asm code from input file
-        // asm_code = new ArrayList<>();
-        // FileReader asmFileReader = new FileReader(inputFilename);
+    }
+    
+    public void compile() throws IOException {
         
-        // try (BufferedReader asmFileBufferedReader = new BufferedReader(asmFileReader)) {
-        //     while(asmFileBufferedReader.ready()){
-        //         String line ="\t"+ asmFileBufferedReader.readLine();
-        //         asm_code.add(line.split("\t"));
-        //     }
-        // }
-        
-        // //printing asm_code
-        // for (String[] test : asm_code) {
-        //     System.out.println(Arrays.toString(test));
-        // }
-        for(int i = 0; i <asm_code.length; i++){
-            for(int j = 0 ; j <asm_code[i].length; j++){
-                if(asm_code[i][j] == "START"){
-                    startValue = Integer.parseInt(asm_code[i][j+1]);
+        for(int i =0 ; i< asm_code.size(); i++){
+            ArrayList<String> icLine = new ArrayList<>();
+            ArrayList<String> symLine = new ArrayList<>();
+            ArrayList<String> poolLine = new ArrayList<>();
+            ArrayList<String> literalLine = new ArrayList<>();
+            for(int j = 1; j< asm_code.get(i).size(); j++){
+                for(int k =0; k < opcode.size(); k++){
+                    if(opcode.get(k)[0].equals(asm_code.get(i).get(j))){
+                        String icStr = "(" + opcode.get(k)[1] + "," + opcode.get(k)[2] + ")";
+                        icLine.add(icStr);
+                    }
+                }
+
+                if( asm_code.get(i).get(j).equals(opcode.get(16)[0]) || asm_code.get(i).get(j).equals(opcode.get(17)[0])){
+                    String poolStr = "(" + asm_code.get(i).get(0) + "," + asm_code.get(i).get(j) + ")";
+                    poolLine.add(poolStr);
+                }
+                if ( asm_code.get(i).get(j).matches("[A-Za-z]")){
+                    String symStr = "("+ asm_code.get(i).get(0) +","+ asm_code.get(i).get(j) +")";
+                    symLine.add(symStr);
+                }
+                if( asm_code.get(i).get(j).matches("[0-9]+")){
+                    String litStr = "(" + asm_code.get(i).get(0) + "," + asm_code.get(i).get(j) + ")";
+                    literalLine.add(litStr);
                 }
             }
-            if(i == 0 || startValue == 0)
-                continue;
-            
-            asm_code[i][0] = Integer.toString(startValue++);
+            ic.add(icLine);
+            symbolTable.add(symLine);
+            literalTable.add(literalLine);
+            poolTable.add(poolLine);
             
         }
+        print(ic);
+        print(symbolTable);
+        print(literalTable);
+        print(poolTable);
+        
     }
 
-    public void compile() throws IOException {
-        System.out.println("Ready to compile");
-        for (String[] line  : asm_code) {
-            System.out.println(Arrays.toString(line));
-            
-        }
-    }
     public static void main(String[] args) throws IOException {
         Pass1Assembler assembler = new Pass1Assembler("input.txt", "opcode.txt");
         assembler.compile();
     }
 }
-
