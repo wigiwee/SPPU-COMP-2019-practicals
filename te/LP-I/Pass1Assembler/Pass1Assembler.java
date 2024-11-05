@@ -128,6 +128,9 @@ public class Pass1Assembler {
                         isComment = true;
                         continue;
                     }
+                    if(word.endsWith(",")){
+                        word = word.substring(0, word.length() -1);
+                    }
                     wordsArrayList.add(word);
                 }
                 isComment = false;
@@ -187,8 +190,13 @@ public class Pass1Assembler {
         System.out.println("asmcode");
         assembler.print(assembler.asm_code);
         System.out.println();
+
         System.out.println("opcode");
         assembler.printOpcode();
+        System.out.println();
+
+        System.out.println("intermediate code");
+        assembler.print(assembler.ic);
         System.out.println();
 
         System.out.println("literal table");

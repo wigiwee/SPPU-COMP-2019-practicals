@@ -1,5 +1,5 @@
-    START   100  #this is a comment
-    READ    A # this is a comment
+    START   100  # this is a comment 
+    READ    A   # assembler won't read this
     READ    B
 LABLE   MOVER   AREG,   A
     ADD AREG,   B
