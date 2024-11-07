@@ -1,5 +1,3 @@
-package SchedulingAlgorithm;
-
 import java.util.Scanner;
 
 //first come first serve scheduling algorithm
