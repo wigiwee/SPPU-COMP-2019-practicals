@@ -128,6 +128,9 @@ public class Pass1Assembler {
                         isComment = true;
                         continue;
                     }
+                    if(word.endsWith(",")){
+                        word = word.substring(0, word.length() -1);
+                    }
                     wordsArrayList.add(word);
                 }
                 isComment = false;
@@ -138,7 +141,7 @@ public class Pass1Assembler {
 
     }
     
-    public void compile()  {
+    public void compile() {
         String icStr, symStr, litStr;
         for(int i =0 ; i< asm_code.size(); i++){
             ArrayList<String> icLine = new ArrayList<>();
@@ -178,5 +181,34 @@ public class Pass1Assembler {
             literalTable.add(literalLine);
             poolTable.add(poolLine);   
         }
+    }
+
+    public static void main(String[] args) throws IOException {
+        Pass1Assembler assembler = new Pass1Assembler("input.txt", "opcode.txt");
+        assembler.compile();
+        
+        System.out.println("asmcode");
+        assembler.print(assembler.asm_code);
+        System.out.println();
+
+        System.out.println("opcode");
+        assembler.printOpcode();
+        System.out.println();
+
+        System.out.println("intermediate code");
+        assembler.print(assembler.ic);
+        System.out.println();
+
+        System.out.println("literal table");
+        assembler.print(assembler.literalTable);
+        System.out.println();
+
+        System.out.println("symbol table");
+        assembler.print(assembler.symbolTable);
+        System.out.println();
+
+        System.out.println("pool table");
+        assembler.print(assembler.poolTable);
+        System.out.println();
     }
 }
