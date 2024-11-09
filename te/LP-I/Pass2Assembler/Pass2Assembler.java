@@ -15,7 +15,7 @@ public class Pass2Assembler {
     public void compile(){
         ArrayList<ArrayList<String>> mc = new ArrayList<>();
         
-        for(int i =0 ; i < ic.size(); i++){
+        for(int i =1 ; i < ic.size(); i++){
             ArrayList<String> line = new ArrayList<>();
             if(!ic.get(i).contains("AD")){
                 for(int j =0 ; j< ic.get(i).size(); j++){
