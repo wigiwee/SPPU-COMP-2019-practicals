@@ -1,0 +1,118 @@
+Practical no. 2. Design at least 10 SQL queries for suitable database application using SQL DML 
+statements: Insert, Select, Update, Delete with operators.
+
+docker exec -it mysql-server mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 9.0.1 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++---------------------+
+| Database            |
++---------------------+
+| information_schema  |
+| mysql               |
+| performance_schema  |
+| sys                 |
++---------------------+
+8 rows in set (0.02 sec)
+
+mysql> create database dbms;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++---------------------+
+| Database            |
++---------------------+
+| dbms                |
+| information_schema  |
+| mysql               |
+| performance_schema  |
+| sys                 |
++---------------------+
+8 rows in set (0.00 sec)
+
+mysql> use dbms;
+Database changed
+
+mysql> create table students(name varchar(255), rollno int, branch varchar(255), marks int);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> show tables;
++----------------+
+| Tables_in_dbms |
++----------------+
+| students       |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> insert into students values("Max Verstappen", 4, "Mechanical Engineering", 33);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from students;
++----------------+--------+------------------------+-------+
+| name           | rollno | branch                 | marks |
++----------------+--------+------------------------+-------+
+| Max Verstappen |      4 | Mechanical Engineering |    33 |
++----------------+--------+------------------------+-------+
+1 row in set (0.00 sec)
+
+mysql> insert into students values("Lando Norris", 1, "Mechanical Engineering", 89);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into students values("CArlos Sainz", 3, "computer engineering", 85);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from students;
++----------------+--------+------------------------+-------+
+| name           | rollno | branch                 | marks |
++----------------+--------+------------------------+-------+
+| Max Verstappen |      4 | Mechanical Engineering |    33 |
+| Lando Norris   |      1 | Mechanical Engineering |    89 |
+| CArlos Sainz   |      3 | computer engineering   |    85 |
++----------------+--------+------------------------+-------+
+3 rows in set (0.00 sec)
+
+mysql> update students set marks=100 where rollno=4 ;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from students;
++----------------+--------+------------------------+-------+
+| name           | rollno | branch                 | marks |
++----------------+--------+------------------------+-------+
+| Max Verstappen |      4 | Mechanical Engineering |   100 |
+| Lando Norris   |      1 | Mechanical Engineering |    89 |
+| CArlos Sainz   |      3 | computer engineering   |    85 |
++----------------+--------+------------------------+-------+
+3 rows in set (0.00 sec)
+
+mysql> delete from students where rollno=1;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from students;
++----------------+--------+------------------------+-------+
+| name           | rollno | branch                 | marks |
++----------------+--------+------------------------+-------+
+| Max Verstappen |      4 | Mechanical Engineering |   100 |
+| CArlos Sainz   |      3 | computer engineering   |    85 |
++----------------+--------+------------------------+-------+
+2 rows in set (0.00 sec)
+
+mysql> drop table students;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> drop database dbms;
+Query OK, 0 rows affected (0.01 sec)

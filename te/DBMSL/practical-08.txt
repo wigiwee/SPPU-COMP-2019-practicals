@@ -1,7 +1,5 @@
 Practical no. 8. Design and Develop MongoDB Queries using CRUD operations.(Use CRUD operations)
 
-╭─░▒▓    ~/Programming/sppu-compter-engg-practicals/te/DBMSL    master ⇡1 ?1 ▓▒░··························································································································░▒▓ ✔  11:01:51 AM  ▓▒░─╮
-╰─ docker exec -it mongodb mongosh
 
 Current Mongosh Log ID: 6732e86c27058cc745fe6910
 Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.2
@@ -30,18 +28,8 @@ switched to db newDB
 newDB> db.createCollection("students");
 { ok: 1 }
 
-newDB> show dbs;
-admin    40.00 KiB
-config   96.00 KiB
-dlms    332.00 KiB
-local    72.00 KiB
-newDB    72.00 KiB
-
 newDB> show collections
 students
-
-newDB> db.students.insert
-db.students.insertMany  db.students.insertOne
 
 newDB> db.students.insertOne({name:"John Wick", rollno:1, dept:"Computer Engineering",})
 {
@@ -60,9 +48,6 @@ newDB> db.students.insertOne({name:"Max Verstappen", rollno:3, dept:"Mechanical 
   acknowledged: true,
   insertedId: ObjectId('6732e99f27058cc745fe6913')
 }
-
-newDB> db.students
-db.students
 
 newDB> db.students.find({});
 [
