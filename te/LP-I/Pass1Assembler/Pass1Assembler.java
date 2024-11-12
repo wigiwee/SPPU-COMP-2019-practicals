@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -108,6 +110,65 @@ public class Pass1Assembler {
         return opcodeArrayList;
     }
 
+    //creating and writing an output file
+    public void createOutputFile(){
+        File file = new File("output.txt");
+        try{
+            file.createNewFile();
+
+        }catch(IOException e){
+            System.out.println("Something went wrong while creating new file");
+        }
+        FileWriter writer;
+        try {
+            writer = new FileWriter("output.txt");
+            writer.write("IC");
+            writer.write("\n");
+
+            for(ArrayList<String> line : this.ic){
+                for(String word : line){
+                    writer.write(word);
+                    writer.write(" ");
+                }
+                writer.write("\n");
+            }    
+            writer.write("LT");
+            writer.write("\n");
+
+            for(ArrayList<String> line : this.literalTable){
+                for(String word: line){
+                    writer.write(word);
+                    writer.write(" ");
+                }
+                writer.write("\n");
+            }
+            writer.write("ST");
+            writer.write("\n");
+
+            for (ArrayList<String> line  : this.symbolTable) {
+                for (String word  : line) {
+                    writer.write(word);
+                    writer.write(" ");
+                }
+                writer.write("\n");                
+            }
+            writer.write("PT");
+            writer.write("\n");
+            for (ArrayList<String> line  : this.poolTable) {
+                for (String word  : line) {
+                    writer.write(word);
+                    writer.write(" ");
+                }
+                writer.write("\n");
+            }
+            
+            writer.close();
+        } catch (Exception e) {
+            System.out.println("Cannot write to the output file");
+        }
+ 
+    }
+    
     //reading input asm code from input file and also removing comments
     public ArrayList<ArrayList<String>> processInputFile(String filename) throws FileNotFoundException, IOException{
         ArrayList<ArrayList<String>> asmcode = new ArrayList<>();
@@ -180,6 +241,7 @@ public class Pass1Assembler {
             symbolTable.add(symLine);
             literalTable.add(literalLine);
             poolTable.add(poolLine);   
+            createOutputFile();
         }
     }
 

@@ -46,8 +46,8 @@ public class LRU {
 
         System.out.println("Page Hit : " + pageHit);
         System.out.println("Page fault : " + pageFault);
-        System.out.println("Page hit ratio : "+(pageHit * 100)/n + "%");
-        System.out.println("Page fault ratio : "+( pageFault * 100)/n + "%");
+        System.out.println("Page hit ratio : "+(float) pageHit/n );
+        System.out.println("Page fault ratio : "+ (float) pageFault/n );
 
 
         in.close();
