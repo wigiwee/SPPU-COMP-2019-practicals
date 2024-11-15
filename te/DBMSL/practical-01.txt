@@ -1,2 +1,130 @@
 Practical no. 1. Design and Develop SQL DDL statements which demonstrate the use of SQL objects 
 such as Table, View, Index.
+
+> mysql -u root -p                                                                                                                                                                                         ─╯
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 12
+Server version: 9.0.1 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> create database dbms;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use dbms;
+Database changed
+
+mysql> create table product(id int, name varchar(255), manufracture varchar(255));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create table manufracture(id int, name varchar(255));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> show tables;
++----------------+
+| Tables_in_dbms |
++----------------+
+| manufracture   |
+| product        |
++----------------+
+2 rows in set (0.00 sec)
+
+mysql> insert into product values(234, "Samsung S23 ultra", "Samsung");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into product values(2234, "Oneplus Nord 2t", "Oneplus");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into product values(785, "iPhone 16", "Apple");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into product values(458, "iPhone 13", "Apple");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from product;
++------+-------------------+--------------+
+| id   | name              | manufracture |
++------+-------------------+--------------+
+|  234 | Samsung S23 ultra | Samsung      |
+| 2234 | Oneplus Nord 2t   | Oneplus      |
+|  785 | iPhone 16         | Apple        |
+|  458 | iPhone 13         | Apple        |
++------+-------------------+--------------+
+4 rows in set (0.00 sec)
+
+mysql> insert into manufracture values(23, "Samsung"); 
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into manufracture values(223, "Oneplus");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into manufracture values(452, "Apple");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from manufracture;
++------+---------+
+| id   | name    |
++------+---------+
+|   23 | Samsung |
+|  223 | Oneplus |
+|  452 | Apple   |
++------+---------+
+3 rows in set (0.00 sec)
+
+mysql> create view product_manufracture AS select product.id, product.name , manufracture.name as manufracture from product, manufracture where product.manufracture=manufracture.name;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> show tables;
++----------------------+
+| Tables_in_dbms       |
++----------------------+
+| manufracture         |
+| product              |
+| product_manufracture |
++----------------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from product_manufracture;
++------+-------------------+--------------+
+| id   | name              | manufracture |
++------+-------------------+--------------+
+|  234 | Samsung S23 ultra | Samsung      |
+| 2234 | Oneplus Nord 2t   | Oneplus      |
+|  785 | iPhone 16         | Apple        |
+|  458 | iPhone 13         | Apple        |
++------+-------------------+--------------+
+4 rows in set (0.00 sec)
+
+mysql> create index name on product (name);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from product;
++------+-------------------+--------------+
+| id   | name              | manufracture |
++------+-------------------+--------------+
+|  234 | Samsung S23 ultra | Samsung      |
+| 2234 | Oneplus Nord 2t   | Oneplus      |
+|  785 | iPhone 16         | Apple        |
+|  458 | iPhone 13         | Apple        |
++------+-------------------+--------------+
+4 rows in set (0.00 sec)
+
