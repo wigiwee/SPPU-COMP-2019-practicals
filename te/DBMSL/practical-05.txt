@@ -1,0 +1,96 @@
+Practical no. 5. Write a PL/SQL block of code using parameterized Cursor, that will merge the data available in the newly created table 
+N_RollCall with the data available in the table O_RollCall. If the data in the first table already exist in the second table then that 
+data should be skipped.
+
+SQL> create table n_rollcall(roll_no number, name varchar2(50));
+
+Table created.
+
+SQL> create table o_rollcall(roll_no number , name varchar2(50));
+
+Table created.
+
+SQL> declare
+  2  cursor new_data_cursor(p_roll_no number) is
+  3  select roll_no, name 
+  4  from n_rollcall
+  5  where roll_no =p_roll_no;
+  6  v_roll_no number;
+  7  v_name varchar2(50);
+  8  v_exists number:=0;
+  9  begin
+ 10  for new_record in (select roll_no, name from n_rollcall) loop
+ 11  open new_data_cursor(new_record.roll_no);
+ 12  fetch new_data_cursor into v_roll_no, v_name;
+ 13  select count(*) into v_exists from o_rollcall where roll_no = new_record.roll_no;
+ 14  if v_exists=0 then
+ 15  insert into o_rollcall (roll_no, name)
+ 16  values (new_record.roll_no, new_record.name);
+ 17  end if;
+ 18  close new_data_cursor;
+ 19  end loop;
+ 20  commit;
+ 21  end;
+ 22  /
+
+PL/SQL procedure successfully completed.
+
+SQL> INSERT INTO N_RollCall (roll_no, name) VALUES (1, 'Alice');
+
+1 row created.
+
+SQL> INSERT INTO N_RollCall (roll_no, name) VALUES (2, 'Bob');
+ 
+1 row created.
+ 
+SQL> INSERT INTO N_RollCall (roll_no, name) VALUES (3, 'Charlie');
+
+1 row created.
+
+SQL> INSERT INTO O_RollCall (roll_no, name) VALUES (2, 'Bob');
+
+1 row created.
+
+SQL> INSERT INTO O_RollCall (roll_no, name) VALUES (4, 'Daisy');
+1 row created.
+
+SQL> declare 
+  2  cursor new_data_cursor(p_roll_no number) is
+  3  select roll_no, name  from n_rollcall where roll_no =p_roll_no;
+  4  v_roll_no number;
+  5  v_name varchar2(50);
+  6  v_exists number:=0;
+  7  begin
+  8  for new_record in (select roll_no, name from n_rollcall) loop
+  9  open new_data_cursor(new_record.roll_no);
+ 10  fetch new_data_cursor into v_roll_no, v_name;
+ 11  select count(*) into v_exists from o_rollcall where roll_no = new_record.roll_no;
+ 12  if v_exists=0 then
+ 13  insert into o_rollcall (roll_no, name)
+ 14  values (new_record.roll_no, new_record.name);
+ 15  end if;
+ 16  close new_data_cursor;
+ 17  end loop;
+ 18  commit;
+ 19  end;
+ 20  /
+
+PL/SQL procedure successfully completed.
+
+SQL> select * from o_rollcall;
+
+   ROLL_NO NAME
+---------- --------------------------------------------------
+         2 Bob
+         4 Daisy
+         1 Alice
+         3 Charlie
+
+SQL> select * from n_rollcall;
+
+   ROLL_NO NAME
+---------- --------------------------------------------------
+         1 Alice
+         2 Bob
+         3 Charlie
+

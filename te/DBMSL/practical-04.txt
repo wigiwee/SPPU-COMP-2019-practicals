@@ -1,0 +1,74 @@
+Practical no. 4. Unnamed PL/SQL code block: 
+Write a PL/SQL block of code for the following requirements:-Schema: 
+1. Borrower(Rollin, Name, DateofIssue, NameofBook, Status)
+2. Fine(Roll_no,Date,Amt)
+Accept roll_no & name of book from user.
+Check the number of days (from date of issue), if days are between 15 to 30 then fine amount will be Rs 5per day.
+If no. of days>30, per day fine will be Rs 50 per day & for days  less than 30, Rs. 5 per day. 
+After submitting the book, status will change from I to R. 
+If condition of fine is true, then details will be stored into fine table.
+
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Fri Nov 15 15:19:37 2024
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+Connected to:
+Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> create table borrower(rollno number, name varchar(30), issue_date date, book_name varchar(30), status varchar(3));
+
+Table created.
+
+SQL> create table fine(rollno number, fine_date date, fineamt number(4));
+
+Table created.
+
+SQL> declare
+  2  rno number := &roll_number;
+  3  bname varchar(30) := '&book_name';
+  4  no_days number(4) := 0;
+  5  issueDate date;
+  6  fineamt number := 0;
+  7  begin
+  8  select issue_date into issueDate from borrower where rollno = rno;
+  9  select sysdate - to_date(issueDate) into no_days from dual;
+ 10  if(no_days >15 and no_days<=30) then
+ 11  fineamt:=no_days*5;
+ 12  elsif no_days>30 then
+ 13  fineamt:= (5*15) + ((no_days-30)*50);
+ 14  end if;
+ 15  update borrower set status='r' where rollno=rno;
+ 16  if fineamt>0 then 
+ 17  insert into fine values(rno, sysdate, fineamt);
+ 18  end if;
+ 19  exception
+ 20  when no_data_found then
+ 21  dbms_output.put_line('record not found');
+ 22  end;
+ 23  /
+Enter value for roll_number: 3
+old   2: rno number := &roll_number;
+new   2: rno number := 3;
+Enter value for book_name: singing
+old   3: bname varchar(30) := '&book_name';
+new   3: bname varchar(30) := 'singing';
+
+PL/SQL procedure successfully completed.
+
+SQL> select * from fine;
+
+    ROLLNO FINE_DATE    FINEAMT
+---------- --------- ----------
+         3 15-NOV-24        120
+
+SQL> select * from borrower;
+
+    ROLLNO NAME                           ISSUE_DAT
+---------- ------------------------------ ---------
+BOOK_NAME                      STA
+------------------------------ ---
+         3 Taylor Swift                   23-OCT-24
+singing                        r

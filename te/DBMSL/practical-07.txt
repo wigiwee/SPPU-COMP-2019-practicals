@@ -1,0 +1,55 @@
+Practical no. 7. Write a database trigger on Library table. The System should keep track of the records that are being updated or 
+deleted. The old value of updated or deleted records should be added in Library_Audit table
+
+
+SQL> create table library_audit(rollno number(3), first_name varchar(10), last_name varchar(10), book_name varchar(10), issueDate date);
+
+Table created.
+
+SQL> create table library_main(rollno number(3), first_name varchar(10), last_name varchar(10), book_name varchar(10), issueDate date);
+
+Table created.
+
+SQL> create or replace trigger take_backup
+  2  before update or delete on library_main
+  3  for each row
+  4  begin
+  5  insert into library_audit values(:old.rollno, :old.first_name, :old.last_name, :old.book_name, :old.issueDate);
+  6  end;
+  7  /
+
+Trigger created.
+
+SQL> insert into library_main values(3, 'Max', 'Verstappen', 'abc', '23-oct-22');
+
+1 row created.
+
+SQL> insert into library_main values(5,'Lando', 'Norris', 'efg', '2-nov-22');
+
+1 row created.
+
+SQL> insert into library_main values(2, 'Carlos', 'Sainz', 'book' , '8-may-24');
+
+1 row created.
+
+SQL> select * from library_main;
+
+    ROLLNO FIRST_NAME LAST_NAME  BOOK_NAME  ISSUEDATE
+---------- ---------- ---------- ---------- ---------
+         3 Max        Verstappen abc        23-OCT-22
+         5 Lando      Norris     efg        02-NOV-22
+         2 Carlos     Sainz      book       08-MAY-24
+
+SQL> select * from library_audit;
+
+no rows selected
+
+SQL> update library_main set book_name = 'pqr' where first_name='Max';
+
+1 row updated.
+
+SQL> select * from library_audit;
+
+    ROLLNO FIRST_NAME LAST_NAME  BOOK_NAME  ISSUEDATE
+---------- ---------- ---------- ---------- ---------
+         3 Max        Verstappen abc        23-OCT-22

@@ -1,0 +1,199 @@
+Practical no. 9. MongoDB – Aggregation and Indexing: Design  and  Develop  MongoDB  Queries 
+using aggregation  and  indexing  with  suitable  example using MongoDB.
+
+test> show dbs;
+admin    40.00 KiB
+config   96.00 KiB
+dlms    332.00 KiB
+local    72.00 KiB
+test    100.00 KiB
+
+test> use test2;
+switched to db test2
+
+test2> db.students.insertMany([
+...     { student_id: 1, name: "Alice", marks: 85, grade: "A", status: "Active" },
+...     { student_id: 2, name: "Bob", marks: 70, grade: "B", status: "Active" },
+...     { student_id: 3, name: "Charlie", marks: 45, grade: "C", status: "Inactive" },
+...     { student_id: 4, name: "David", marks: 90, grade: "A", status: "Active" },
+...     { student_id: 5, name: "Eve", marks: 30, grade: "F", status: "Inactive" }
+... ]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('67377ccaf427de6d70fe6911'),
+    '1': ObjectId('67377ccaf427de6d70fe6912'),
+    '2': ObjectId('67377ccaf427de6d70fe6913'),
+    '3': ObjectId('67377ccaf427de6d70fe6914'),
+    '4': ObjectId('67377ccaf427de6d70fe6915')
+  }
+}
+
+test2> db.students.aggregate([
+...     {
+...         $group: {
+...             _id: "$grade",            // Group by grade
+...             avg_marks: { $avg: "$marks" }, // Calculate average marks
+...             student_count: { $count: {} } // Count the number of students in each grade
+...         }
+...     },
+...     {
+...         $sort: { avg_marks: -1 } // Sort grades by average marks in descending order
+...     }
+... ]);
+[
+  { _id: 'A', avg_marks: 87.5, student_count: 2 },
+  { _id: 'B', avg_marks: 70, student_count: 1 },
+  { _id: 'C', avg_marks: 45, student_count: 1 },
+  { _id: 'F', avg_marks: 30, student_count: 1 }
+]
+
+test2> db.students.aggregate([
+...     {
+...         $group: {
+...             _id: "$status", // Group by status (Active/Inactive)
+...             count: { $count: {} } // Count the students in each group
+...         }
+...     }
+... ]);
+[ { _id: 'Active', count: 3 }, { _id: 'Inactive', count: 2 } ]
+
+test2> db.students.createIndex({ status: 1 });
+status_1
+
+test2> db.students.createIndex({ status: 1, grade: 1 });
+status_1_grade_1
+
+test2> db.students.find({ status: "Active" }).explain("executionStats");
+{
+  explainVersion: '1',
+  queryPlanner: {
+    namespace: 'test2.students',
+    indexFilterSet: false,
+    parsedQuery: { status: { '$eq': 'Active' } },
+    queryHash: 'BD7E3118',
+    planCacheKey: '67CAF8A5',
+    maxIndexedOrSolutionsReached: false,
+    maxIndexedAndSolutionsReached: false,
+    maxScansToExplodeReached: false,
+    winningPlan: {
+      stage: 'FETCH',
+      inputStage: {
+        stage: 'IXSCAN',
+        keyPattern: { status: 1 },
+        indexName: 'status_1',
+        isMultiKey: false,
+        multiKeyPaths: { status: [] },
+        isUnique: false,
+        isSparse: false,
+        isPartial: false,
+        indexVersion: 2,
+        direction: 'forward',
+        indexBounds: { status: [ '["Active", "Active"]' ] }
+      }
+    },
+    rejectedPlans: [
+      {
+        stage: 'FETCH',
+        inputStage: {
+          stage: 'IXSCAN',
+          keyPattern: { status: 1, grade: 1 },
+          indexName: 'status_1_grade_1',
+          isMultiKey: false,
+          multiKeyPaths: { status: [], grade: [] },
+          isUnique: false,
+          isSparse: false,
+          isPartial: false,
+          indexVersion: 2,
+          direction: 'forward',
+          indexBounds: {
+            status: [ '["Active", "Active"]' ],
+            grade: [ '[MinKey, MaxKey]' ]
+          }
+        }
+      }
+    ]
+  },
+  executionStats: {
+    executionSuccess: true,
+    nReturned: 3,
+    executionTimeMillis: 0,
+    totalKeysExamined: 3,
+    totalDocsExamined: 3,
+    executionStages: {
+      stage: 'FETCH',
+      nReturned: 3,
+      executionTimeMillisEstimate: 0,
+      works: 5,
+      advanced: 3,
+      needTime: 0,
+      needYield: 0,
+      saveState: 0,
+      restoreState: 0,
+      isEOF: 1,
+      docsExamined: 3,
+      alreadyHasObj: 0,
+      inputStage: {
+        stage: 'IXSCAN',
+        nReturned: 3,
+        executionTimeMillisEstimate: 0,
+        works: 4,
+        advanced: 3,
+        needTime: 0,
+        needYield: 0,
+        saveState: 0,
+        restoreState: 0,
+        isEOF: 1,
+        keyPattern: { status: 1 },
+        indexName: 'status_1',
+        isMultiKey: false,
+        multiKeyPaths: { status: [] },
+        isUnique: false,
+        isSparse: false,
+        isPartial: false,
+        indexVersion: 2,
+        direction: 'forward',
+        indexBounds: { status: [ '["Active", "Active"]' ] },
+        keysExamined: 3,
+        seeks: 1,
+        dupsTested: 0,
+        dupsDropped: 0
+      }
+    }
+  },
+  command: { find: 'students', filter: { status: 'Active' }, '$db': 'test2' },
+  serverInfo: {
+    host: '59f6dbc9581f',
+    port: 27017,
+    version: '7.0.14',
+    gitVersion: 'ce59cfc6a3c5e5c067dca0d30697edd68d4f5188'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,
+    internalQueryFrameworkControl: 'trySbeRestricted'
+  },
+  ok: 1
+}
+
+test2> db.students.getIndexes();
+[
+  { v: 2, key: { _id: 1 }, name: '_id_' },
+  { v: 2, key: { status: 1 }, name: 'status_1' },
+  { v: 2, key: { status: 1, grade: 1 }, name: 'status_1_grade_1' }
+]
+
+test2> db.students.dropIndex({status:1});
+{ nIndexesWas: 3, ok: 1 }
+
+test2> db.students.getIndexes();
+[
+  { v: 2, key: { _id: 1 }, name: '_id_' },
+  { v: 2, key: { status: 1, grade: 1 }, name: 'status_1_grade_1' }
+]
