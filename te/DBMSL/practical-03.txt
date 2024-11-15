@@ -1,0 +1,192 @@
+Practical no. 3. Design at least 10 SQL queries for suitable database application using SQL DML statements: all types of Join, Sub-Query and View.
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Fri Nov 15 06:18:29 2024
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> create table product(id number(2), name varchar2(10), manufracture varchar2(15));
+
+Table created.
+
+SQL> create table manufracture (id number(2), m_name varchar2(10), headquarters varchar2(15));
+
+Table created.
+
+SQL> insert into product values(2, 'Nord 2T', 'Oneplus');
+
+1 row created.
+
+SQL> insert into product values(5, 'G15 5520', 'Dell');
+
+1 row created.
+
+SQL> insert into product values (23, 'Victus', 'HP');
+
+1 row created.
+
+SQL> insert into product values (52, 'iPhone 12', 'Apple');
+
+1 row created.
+
+SQL> insert into product values(24, 'ipod', 'Apple');
+
+1 row created.
+
+SQL> insert into product values(28, 'macbook', 'Apple');
+
+1 row created.
+
+SQL> insert into product values (32, 'S23 ultra', 'Samsung');
+
+1 row created.
+
+SQL> select * from product;
+
+        ID NAME       MANUFRACTURE
+---------- ---------- ---------------
+         2 Nord 2T    Oneplus
+         5 G15 5520   Dell
+        23 Victus     HP
+        52 iPhone 12  Apple
+        24 ipod       Apple
+        28 macbook    Apple
+        32 S23 ultra  Samsung
+
+7 rows selected.
+
+SQL> insert into manufracture values(5, 'Oneplus', 'China');
+
+1 row created.
+
+SQL> insert into manufracture values (2, 'Samsung', 'Korea');
+
+1 row created.
+
+SQL> insert into manufracture values(5, 'Framework', 'USA');
+
+1 row created.
+
+SQL> insert into manufracture values (32, 'Dell', 'China');
+
+1 row created.
+
+SQL> insert into manufracture values (23, 'TATA', 'India');
+
+1 row created.
+
+SQL> insert into manufracture values (55, 'Oneplus', 'china');
+
+1 row created.
+
+SQL> select * from manufracture;
+
+        ID M_NAME     HEADQUARTERS
+---------- ---------- ---------------
+         5 Oneplus    China
+         2 Samsung    Korea
+         5 Framework  USA
+        32 Dell       China
+        23 TATA       India
+        55 Oneplus    china
+
+6 rows selected.
+
+SQL> select product.id as p_id, product.name as p_name, manufracture.headquarters as manufracture_head1 
+from product 
+inner join manufracture 
+on product.manufracture=manufracture.m_name;
+
+      P_ID P_NAME     MANUFRACTURE_HE
+---------- ---------- ---------------
+         2 Nord 2T    China
+         2 Nord 2T    china
+         5 G15 5520   China
+        32 S23 ultra  Korea
+
+SQL> select product.id as p_id, product.name as p_name, manufracture.headquarters as manufracture_head1 
+from product 
+left join manufracture 
+on product.manufracture=manufracture.m_name;
+
+      P_ID P_NAME     MANUFRACTURE_HE
+---------- ---------- ---------------
+         2 Nord 2T    China
+        32 S23 ultra  Korea
+         5 G15 5520   China
+         2 Nord 2T    china
+        23 Victus
+        52 iPhone 12
+        24 ipod
+        28 macbook
+
+8 rows selected.
+
+SQL> select product.id as p_id, product.name as p_name, manufracture.headquarters as manufracture_head 
+from product 
+right join manufracture 
+on product.manufracture=manufracture.m_name;
+
+      P_ID P_NAME     MANUFRACTURE_HE
+---------- ---------- ---------------
+         2 Nord 2T    China
+         2 Nord 2T    china
+         5 G15 5520   China
+        32 S23 ultra  Korea
+                      India
+                      USA
+
+6 rows selected.
+
+SQL> select product.id as p_id, product.name as p_name, manufracture.headquarters as manufracture_head1 
+from product 
+full join manufracture 
+on product.manufracture=manufracture.m_name;
+
+      P_ID P_NAME     MANUFRACTURE_HE
+---------- ---------- ---------------
+         2 Nord 2T    China
+         2 Nord 2T    china
+         5 G15 5520   China
+        23 Victus
+        52 iPhone 12
+        24 ipod
+        28 macbook
+        32 S23 ultra  Korea
+                      India
+                      USA
+
+10 rows selected.
+
+
+SQL> create view product_manufracture_headq as select product.name, manufracture.m_name as manufracture_name, manufracture.headquarters as headq 
+from product, manufracture 
+where product.manufracture=manufracture.m_name;
+
+View created.
+
+NAME       MANUFRACTU HEADQ
+---------- ---------- ---------------
+Nord 2T    Oneplus    China
+Nord 2T    Oneplus    china
+G15 5520   Dell       China
+S23 ultra  Samsung    Korea
+
+SQL> select name 
+from product 
+where manufracture in 
+    ( 
+        select m_name 
+        from manufracture 
+        where headquarters='China'
+    );
+
+NAME
+----------
+Nord 2T
+G15 5520
