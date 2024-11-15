@@ -1,0 +1,72 @@
+Practical no. 3. PL/SQL Stored Procedure and Stored Function.
+Write a Stored Procedure namely proc_Grade for the categorization of student. If marks scored by students in examination is <=1500 and marks>=990 then student will be placed in
+distinction category if marks scored are between 989 and900 category is first class, if marks 899 and 825 category is Higher Second Class. 
+Write a PL/SQL block for using procedure created with above requirement.
+Stud_Marks(name, total_marks)     Result(Roll,Name, Class)
+
+
+SQL> create table stud_marks(name varchar(50), marks number);
+
+Table created.
+
+SQL> create table result(rollno number, name varchar(50), class varchar(50));
+
+Table created.
+
+SQL> create or replace procedure proc_grade(rno number, name varchar, marks number) is
+  2  class varchar(50);
+  3  begin
+  4  if marks<=1500 and marks>=990 then
+  5  class:='Distinction';
+  6  elsif marks<=989 and marks>=900 then
+  7  class:='First class';
+  8  elsif marks<=899 and marks>=825 then
+  9  class:='Higher second class';
+ 10  else
+ 11  class:='no class';
+ 12  end if;
+ 13  insert into stud_marks values(name, marks);
+ 14  insert into result values(rno, name, class);
+ 15  end;
+ 16  /
+
+Procedure created.
+
+SQL> exec proc_grade(3,'Max Verstappen', 555);
+
+PL/SQL procedure successfully completed.
+
+SQL> select * from result;
+
+    ROLLNO NAME
+---------- --------------------------------------------------
+CLASS
+--------------------------------------------------
+         3 Max Verstappen
+no class
+
+
+SQL> select * from stud_marks;
+
+NAME                                                    MARKS
+-------------------------------------------------- ----------
+Max Verstappen                                            555
+
+SQL> exec proc_grade(6, 'Lando Norris', 1400);
+
+PL/SQL procedure successfully completed.
+
+SQL> select * from result;
+
+    ROLLNO NAME
+---------- --------------------------------------------------
+CLASS
+--------------------------------------------------
+         3 Max Verstappen
+no class
+
+         6 Lando Norris
+Distinction
+
+
+SQL> 
