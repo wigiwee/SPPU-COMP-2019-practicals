@@ -1,0 +1,125 @@
+Practical no. 8. MongoDB – Map-reduces operations: Implement Map reduces operation with suitable example using MongoDB.
+
+Current Mongosh Log ID: 6736dcfef427de6d70fe6910
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.2
+Using MongoDB:          7.0.14
+Using Mongosh:          2.3.2
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-11-15T04:39:45.730+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2024-11-15T04:39:45.968+00:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2024-11-15T04:39:45.968+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never' in this binary version
+   2024-11-15T04:39:45.968+00:00: Soft rlimits for open file descriptors too low
+------
+
+test> show dbs;
+admin    40.00 KiB
+config  108.00 KiB
+dlms    332.00 KiB
+local    72.00 KiB
+test    100.00 KiB
+
+test> use test;
+already on db test
+
+test> show collections;
+records
+
+test> db.records.find();
+[
+  {
+    _id: ObjectId('6736077a2d23761740fe6911'),
+    rollno: 2,
+    name: 'pooja',
+    subj: 'TOC',
+    marks: 65
+  },
+  {
+    _id: ObjectId('6736077a2d23761740fe6912'),
+    rollno: 3,
+    name: 'prachi',
+    subj: 'TOC',
+    marks: 80
+  },
+  {
+    _id: ObjectId('6736077a2d23761740fe6913'),
+    rollno: 4,
+    name: 'pallavi',
+    subj: 'TOC',
+    marks: 70
+  },
+  {
+    _id: ObjectId('6736077a2d23761740fe6914'),
+    rollno: 5,
+    name: 'amruta',
+    subj: 'db',
+    marks: 67
+  },
+  {
+    _id: ObjectId('6736077a2d23761740fe6915'),
+    rollno: 6,
+    name: 'priti',
+    subj: 'ISEE',
+    marks: 97
+  },
+  {
+    _id: ObjectId('6736077a2d23761740fe6916'),
+    rollno: 7,
+    name: 'diksha',
+    subj: 'oop',
+    marks: 59
+  },
+  {
+    _id: ObjectId('6736077a2d23761740fe6917'),
+    rollno: 8,
+    name: 'deepika',
+    subj: 'cn',
+    marks: 70
+  },
+  {
+    _id: ObjectId('6736077a2d23761740fe6918'),
+    rollno: 9,
+    name: 'genelia',
+    subj: 'sepm',
+    marks: 84
+  },
+  {
+    _id: ObjectId('6736077a2d23761740fe6919'),
+    rollno: 10,
+    name: 'amaraya',
+    subj: 'sepm',
+    marks: 77
+  }
+]
+
+test> var mappingFunction = function(){emit(this.subj, this.marks)}
+
+test> var reduceFunction = function(key, marks){
+... var result = {max:0, min:1000, avg:0};
+... marks.forEach(function(value){
+... if( value>result.max){
+... result.max = value;
+... }
+... if(value < result.min){
+... result.min = value;
+... }
+... })
+... result.avg = Array.avg(marks);
+... return result;
+... }
+
+test> db.records.mapReduce(mappingFunction, reduceFunction, {out:"result"});
+{ result: 'result', ok: 1 }
+
+test> db.result.find()
+[
+  { _id: 'cn', value: { max: 70, min: 70, avg: 70 } },
+  { _id: 'sepm', value: { max: 84, min: 77, avg: 80.5 } },
+  { _id: 'db', value: { max: 67, min: 67, avg: 67 } },
+  { _id: 'TOC', value: { max: 80, min: 65, avg: 71.66666666666667 } },
+  { _id: 'ISEE', value: { max: 97, min: 97, avg: 97 } },
+  { _id: 'oop', value: { max: 59, min: 59, avg: 59 } }
+]
