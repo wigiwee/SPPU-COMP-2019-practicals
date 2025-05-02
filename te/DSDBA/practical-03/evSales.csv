@@ -1,0 +1,276 @@
+﻿Date,Region,Brand,Model,Vehicle_Type,Battery_Capacity_kWh,Discount_Percentage,Customer_Segment,Fast_Charging_Option
+2023-04,Oceania,Volkswagen,Model 3,SUV,45,16,Budget Conscious,No
+2023-10,Oceania,Ford,Model 3,Sedan,89,5,Tech Enthusiast,Yes
+2023-10,South America,Volkswagen,Atto 3,Sedan,61,4,Budget Conscious,Yes
+2023-02,Africa,Volkswagen,Corolla EV,Crossover,100,16,Eco-Conscious,No
+2023-10,North America,Tesla,Rio EV,Sedan,70,8,Eco-Conscious,Yes
+2023-01,Africa,Tesla,Model S,Hatchback,67,6,High Income,No
+2023-04,North America,Toyota,Atto 3,Truck,41,10,Eco-Conscious,Yes
+2023-06,Oceania,Ford,ID.3,Sedan,75,19,High Income,No
+2023-03,Africa,BMW,Han EV,SUV,59,7,Tech Enthusiast,Yes
+2023-06,North America,BMW,Han EV,Truck,58,6,Budget Conscious,No
+2023-03,Oceania,Ford,Model S,Hatchback,78,11,Tech Enthusiast,Yes
+2023-02,Africa,Tesla,Model S,Hatchback,93,1,Eco-Conscious,Yes
+2023-08,Oceania,Tesla,Elantra EV,Coupe,55,6,Eco-Conscious,Yes
+2023-08,North America,Toyota,Rio EV,Truck,63,3,Eco-Conscious,Yes
+2023-05,Asia,Ford,Corolla EV,Hatchback,95,14,Middle Income,Yes
+2023-05,North America,Kia,Rio EV,Coupe,54,9,High Income,No
+2023-06,Africa,Toyota,Han EV,SUV,50,3,Budget Conscious,Yes
+2023-09,South America,Kia,Mach-E,SUV,56,6,Budget Conscious,Yes
+2023-12,North America,BYD,Leaf,SUV,77,4,Eco-Conscious,Yes
+2023-07,North America,Nissan,Elantra EV,Sedan,70,2,Eco-Conscious,Yes
+2023-06,North America,Ford,Model 3,Hatchback,82,0,Budget Conscious,No
+2023-03,North America,Kia,Rio EV,Hatchback,62,12,Eco-Conscious,Yes
+2023-07,Asia,Volkswagen,iX,Sedan,85,19,Budget Conscious,No
+2023-12,Africa,Kia,Corolla EV,Sedan,88,1,High Income,Yes
+2023-09,North America,Ford,Leaf,Hatchback,83,4,Budget Conscious,No
+2023-06,Africa,Hyundai,Rio EV,Coupe,57,18,Budget Conscious,Yes
+2023-07,North America,BYD,Han EV,Truck,53,9,Eco-Conscious,No
+2023-02,North America,Nissan,Model 3,Crossover,82,11,Eco-Conscious,Yes
+2023-04,North America,BMW,Tucson EV,Crossover,65,2,High Income,No
+2023-07,Asia,Volkswagen,Han EV,Hatchback,43,15,Tech Enthusiast,No
+2023-03,Africa,BMW,i4,Truck,78,17,Eco-Conscious,Yes
+2023-05,Oceania,Kia,Model 3,Truck,91,2,Tech Enthusiast,Yes
+2023-07,Oceania,Kia,Ariya,Truck,42,14,Budget Conscious,No
+2023-06,Asia,BMW,Han EV,Truck,44,4,Budget Conscious,Yes
+2023-05,Africa,Nissan,Corolla EV,Hatchback,74,20,Eco-Conscious,No
+2023-12,North America,Nissan,ID.5,SUV,61,19,Budget Conscious,Yes
+2023-05,Oceania,Toyota,Corolla EV,Sedan,94,15,Budget Conscious,Yes
+2023-04,North America,Kia,ID.4,SUV,75,0,Eco-Conscious,Yes
+2023-06,North America,BYD,i4,Truck,90,2,Budget Conscious,Yes
+2023-06,North America,Toyota,Atto 3,Sedan,85,10,High Income,Yes
+2023-07,Asia,BYD,Model S,Coupe,44,5,Tech Enthusiast,No
+2023-10,Oceania,Volkswagen,Atto 3,SUV,60,10,Budget Conscious,No
+2023-04,Europe,BMW,Elantra EV,SUV,57,1,Eco-Conscious,Yes
+2023-03,Africa,Hyundai,Model 3,Crossover,52,3,Budget Conscious,Yes
+2023-09,Africa,Volkswagen,Rio EV,Hatchback,71,8,Middle Income,No
+2023-01,Africa,Toyota,ID.4,Hatchback,43,16,High Income,No
+2023-06,Oceania,Volkswagen,ID.4,Truck,56,3,Tech Enthusiast,No
+2023-07,North America,BMW,ID.5,Hatchback,55,18,Eco-Conscious,No
+2023-05,Asia,Toyota,Elantra EV,Sedan,62,2,High Income,No
+2023-08,Africa,Kia,Elantra EV,Truck,40,5,Middle Income,Yes
+2023-05,South America,BYD,Elantra EV,Hatchback,63,8,Middle Income,Yes
+2023-10,Africa,BMW,Rio EV,Hatchback,68,9,Budget Conscious,No
+2023-05,Africa,BYD,Model 3,Hatchback,100,10,Budget Conscious,Yes
+2023-03,Africa,BYD,Elantra EV,Crossover,74,14,Eco-Conscious,Yes
+2023-02,Africa,Ford,Model S,Hatchback,76,19,Budget Conscious,Yes
+2023-05,North America,BYD,Mach-E,Coupe,82,3,Budget Conscious,Yes
+2023-08,Africa,Toyota,Model S,Hatchback,59,5,Budget Conscious,Yes
+2023-05,North America,BMW,Rio EV,Coupe,99,15,Tech Enthusiast,Yes
+2023-10,Oceania,Toyota,Mach-E,Sedan,88,14,Budget Conscious,Yes
+2023-08,North America,Nissan,Leaf,SUV,100,5,Middle Income,Yes
+2023-05,Oceania,Hyundai,ID.3,Truck,100,16,Budget Conscious,No
+2023-01,North America,BMW,Tucson EV,Hatchback,51,5,Tech Enthusiast,Yes
+2023-09,North America,Ford,ID.5,Coupe,91,1,Eco-Conscious,Yes
+2023-02,Africa,Hyundai,i4,SUV,65,5,Tech Enthusiast,Yes
+2023-09,Oceania,Kia,iX,Hatchback,62,19,High Income,No
+2023-04,North America,Hyundai,Elantra EV,SUV,42,14,Budget Conscious,Yes
+2023-04,Africa,Nissan,Atto 3,Truck,69,16,Eco-Conscious,Yes
+2023-11,Oceania,Kia,Leaf,SUV,43,12,Budget Conscious,Yes
+2023-10,Oceania,Hyundai,Model S,Hatchback,58,17,Tech Enthusiast,No
+2023-07,South America,Volkswagen,ID.4,Hatchback,96,5,Tech Enthusiast,No
+2023-12,Oceania,Ford,Model Y,SUV,97,2,High Income,Yes
+2023-08,Asia,Volkswagen,iX,Hatchback,51,15,Budget Conscious,No
+2023-01,Oceania,Hyundai,ID.3,Truck,47,14,Budget Conscious,No
+2023-07,Oceania,Ford,Model S,Crossover,86,8,Tech Enthusiast,No
+2023-03,Asia,Toyota,ID.4,Hatchback,58,15,Budget Conscious,Yes
+2023-12,Europe,Ford,Han EV,Hatchback,87,1,Tech Enthusiast,Yes
+2023-05,South America,Nissan,Leaf,Sedan,57,1,Tech Enthusiast,Yes
+2023-11,Europe,Kia,Mach-E,Sedan,82,7,Middle Income,No
+2023-11,Africa,Ford,Leaf,Crossover,55,10,Eco-Conscious,Yes
+2023-03,Africa,Nissan,Atto 3,Crossover,66,1,High Income,Yes
+2023-06,North America,Kia,Rio EV,Coupe,67,4,Eco-Conscious,No
+2023-10,Oceania,Nissan,Han EV,Crossover,50,8,Eco-Conscious,Yes
+2023-01,Oceania,Toyota,Mach-E,Hatchback,56,13,Budget Conscious,Yes
+2023-09,Oceania,Ford,Leaf,Sedan,51,17,Tech Enthusiast,Yes
+2023-07,Oceania,Kia,Rio EV,Coupe,86,2,Eco-Conscious,Yes
+2023-07,Oceania,BMW,Elantra EV,Hatchback,80,6,High Income,Yes
+2023-12,Asia,BMW,Tucson EV,Truck,74,3,Budget Conscious,No
+2023-04,North America,Nissan,Leaf,Truck,44,5,Eco-Conscious,No
+2023-07,North America,Tesla,Elantra EV,Truck,94,8,Budget Conscious,No
+2023-06,Asia,Ford,Han EV,SUV,59,10,High Income,No
+2023-08,Africa,Nissan,Atto 3,SUV,56,14,Budget Conscious,Yes
+2023-03,Oceania,Nissan,Corolla EV,Crossover,84,9,Budget Conscious,No
+2023-09,North America,BYD,iX,Hatchback,64,14,Eco-Conscious,Yes
+2023-06,Oceania,Hyundai,i4,Truck,74,19,Tech Enthusiast,Yes
+2023-02,North America,BYD,Ariya,Hatchback,73,10,High Income,Yes
+2023-02,Oceania,BMW,Corolla EV,Crossover,89,14,Budget Conscious,No
+2023-06,Europe,Tesla,Rio EV,Hatchback,91,4,Budget Conscious,Yes
+2023-03,Asia,Nissan,Rio EV,Hatchback,48,19,Tech Enthusiast,No
+2023-11,Africa,Nissan,Model Y,Truck,76,18,Budget Conscious,Yes
+2023-01,North America,Kia,Corolla EV,Truck,73,16,High Income,No
+2023-01,Oceania,Ford,Atto 3,Crossover,69,12,Eco-Conscious,Yes
+2023-09,Oceania,Tesla,i4,Hatchback,80,3,Middle Income,Yes
+2023-11,Oceania,BMW,Han EV,SUV,47,3,Tech Enthusiast,No
+2023-01,North America,BMW,iX,Sedan,81,12,Budget Conscious,Yes
+2023-02,North America,Volkswagen,Mach-E,Hatchback,52,7,Budget Conscious,Yes
+2023-10,South America,Kia,Elantra EV,SUV,73,2,Eco-Conscious,Yes
+2023-07,Asia,Toyota,Ariya,SUV,89,9,Budget Conscious,Yes
+2023-02,Oceania,Kia,ID.4,Hatchback,60,4,Eco-Conscious,Yes
+2023-07,North America,Kia,Tucson EV,Hatchback,100,4,Budget Conscious,Yes
+2023-06,Asia,Toyota,Atto 3,Truck,74,6,High Income,Yes
+2023-12,Africa,Hyundai,Leaf,Hatchback,66,10,Eco-Conscious,No
+2023-01,North America,BMW,ID.4,Coupe,83,11,Budget Conscious,Yes
+2023-05,Africa,Kia,Elantra EV,Hatchback,46,12,Budget Conscious,Yes
+2023-04,Africa,Hyundai,Model S,Hatchback,84,8,Eco-Conscious,Yes
+2023-06,Oceania,Ford,Ariya,Crossover,69,9,Tech Enthusiast,Yes
+2023-05,Oceania,Ford,i4,Coupe,85,3,High Income,No
+2023-03,Oceania,BYD,Model S,Hatchback,55,10,High Income,No
+2023-10,Africa,Volkswagen,Mach-E,Hatchback,50,5,Budget Conscious,No
+2023-08,Oceania,Toyota,Atto 3,Hatchback,75,0,Tech Enthusiast,Yes
+2023-03,Asia,Kia,Elantra EV,Truck,50,1,Tech Enthusiast,No
+2023-06,South America,Ford,Corolla EV,Hatchback,82,15,Eco-Conscious,Yes
+2023-04,Africa,Ford,Corolla EV,Hatchback,67,17,High Income,Yes
+2023-04,North America,Nissan,Corolla EV,Hatchback,76,7,Budget Conscious,Yes
+2023-11,Africa,Kia,Model Y,Crossover,82,0,Tech Enthusiast,Yes
+2023-07,Oceania,BYD,i4,Hatchback,48,17,High Income,No
+2023-10,Asia,BYD,ID.5,Crossover,79,9,High Income,No
+2023-11,North America,Hyundai,i4,Hatchback,76,17,Budget Conscious,Yes
+2023-07,North America,BMW,Model Y,Hatchback,69,14,High Income,No
+2023-09,Africa,BMW,Tucson EV,SUV,56,0,Eco-Conscious,No
+2023-08,Asia,Ford,Han EV,Hatchback,44,11,Budget Conscious,No
+2023-01,Africa,Kia,Han EV,Sedan,93,5,Budget Conscious,Yes
+2023-01,North America,Volkswagen,Corolla EV,Truck,49,6,Budget Conscious,Yes
+2023-09,North America,BYD,Ariya,Coupe,77,9,High Income,Yes
+2023-05,Africa,BMW,Model 3,Hatchback,52,10,High Income,Yes
+2023-07,Africa,Kia,Corolla EV,Coupe,66,17,Budget Conscious,Yes
+2023-08,Oceania,Nissan,Corolla EV,SUV,58,13,High Income,Yes
+2023-06,Oceania,Nissan,Elantra EV,Truck,92,10,Budget Conscious,Yes
+2023-05,North America,Tesla,Model Y,Hatchback,73,9,Middle Income,Yes
+2023-08,Asia,Tesla,Han EV,Hatchback,42,16,Tech Enthusiast,No
+2023-06,Africa,Volkswagen,Rio EV,SUV,99,18,Budget Conscious,Yes
+2023-12,Oceania,BMW,Han EV,Hatchback,89,9,Eco-Conscious,Yes
+2023-08,Oceania,Hyundai,Mach-E,Sedan,46,7,Eco-Conscious,No
+2023-05,Oceania,Hyundai,Tucson EV,Truck,45,11,Middle Income,Yes
+2023-08,Africa,BYD,Han EV,SUV,82,17,Middle Income,Yes
+2023-06,Oceania,BMW,i4,Coupe,52,16,High Income,Yes
+2023-09,Europe,BMW,Elantra EV,Hatchback,96,2,Budget Conscious,Yes
+2023-04,Oceania,BMW,Rio EV,Coupe,98,3,Budget Conscious,No
+2023-07,Africa,Volkswagen,ID.4,Truck,76,2,Tech Enthusiast,No
+2023-11,North America,Ford,Tucson EV,Coupe,47,3,Budget Conscious,Yes
+2023-10,Africa,BYD,Model Y,Coupe,83,11,Tech Enthusiast,No
+2023-09,Africa,BMW,ID.3,SUV,71,5,High Income,Yes
+2023-04,Africa,Kia,Elantra EV,Truck,80,3,Tech Enthusiast,Yes
+2023-06,North America,Hyundai,Model S,SUV,62,7,High Income,No
+2023-02,Africa,Nissan,Corolla EV,Truck,90,12,Budget Conscious,Yes
+2023-05,North America,Nissan,ID.3,Coupe,57,7,Tech Enthusiast,No
+2023-08,Asia,Hyundai,Atto 3,Sedan,46,1,High Income,Yes
+2023-02,Africa,Ford,Model 3,Crossover,88,8,High Income,Yes
+2023-09,Africa,Nissan,Model 3,Sedan,67,3,Tech Enthusiast,Yes
+2023-08,North America,Ford,Corolla EV,Crossover,46,5,Eco-Conscious,Yes
+2023-01,Africa,Ford,Leaf,Truck,58,10,Middle Income,Yes
+2023-12,Asia,Nissan,Tucson EV,SUV,79,4,High Income,Yes
+2023-09,Asia,Hyundai,Ariya,Hatchback,73,6,Budget Conscious,Yes
+2023-03,North America,Kia,Model 3,Coupe,70,3,Middle Income,Yes
+2023-07,Oceania,Kia,ID.3,Hatchback,85,15,Middle Income,Yes
+2023-07,Africa,Nissan,Model 3,Truck,62,14,Tech Enthusiast,No
+2023-03,Africa,Toyota,Han EV,SUV,46,8,Tech Enthusiast,No
+2023-11,North America,Nissan,Han EV,SUV,59,16,Eco-Conscious,Yes
+2023-01,North America,Volkswagen,ID.3,SUV,85,2,Budget Conscious,Yes
+2023-01,Africa,Toyota,Corolla EV,Coupe,74,0,High Income,Yes
+2023-12,Oceania,Nissan,Atto 3,SUV,42,15,High Income,Yes
+2023-07,North America,Ford,iX,Truck,68,19,Budget Conscious,Yes
+2023-05,South America,BMW,Ariya,Hatchback,92,16,Eco-Conscious,Yes
+2023-07,Oceania,Toyota,Corolla EV,Hatchback,94,11,Middle Income,No
+2023-05,North America,BMW,ID.4,Coupe,78,0,Middle Income,No
+2023-03,Africa,Kia,Elantra EV,Sedan,87,0,High Income,Yes
+2023-01,Oceania,Toyota,Corolla EV,Coupe,65,17,Budget Conscious,Yes
+2023-03,North America,Toyota,ID.5,SUV,44,8,Tech Enthusiast,Yes
+2023-11,Africa,BYD,Model Y,Hatchback,84,7,High Income,No
+2023-10,Oceania,Kia,Model 3,Coupe,72,12,Budget Conscious,Yes
+2023-03,Oceania,Nissan,ID.4,SUV,86,19,Eco-Conscious,Yes
+2023-09,South America,Nissan,Atto 3,Coupe,48,18,Middle Income,Yes
+2023-06,North America,Hyundai,Rio EV,Hatchback,43,10,Budget Conscious,No
+2023-03,South America,Kia,Model 3,Truck,84,4,Budget Conscious,Yes
+2023-02,Asia,Toyota,Elantra EV,Hatchback,42,3,High Income,No
+2023-05,Africa,Kia,Model 3,SUV,85,10,Tech Enthusiast,No
+2023-05,Oceania,Tesla,Ariya,Crossover,93,8,Budget Conscious,No
+2023-12,Oceania,Kia,Rio EV,Crossover,78,1,Budget Conscious,Yes
+2023-06,North America,Volkswagen,Leaf,Hatchback,100,17,Eco-Conscious,Yes
+2023-06,Asia,BMW,Atto 3,Hatchback,85,5,High Income,No
+2023-09,Oceania,BMW,Model 3,SUV,59,3,Budget Conscious,No
+2023-12,Africa,BYD,Han EV,Hatchback,71,17,Eco-Conscious,No
+2023-12,Africa,BYD,Mach-E,Hatchback,44,4,Budget Conscious,Yes
+2023-05,Africa,Ford,Tucson EV,Truck,100,10,Eco-Conscious,Yes
+2023-03,Oceania,BMW,ID.5,Crossover,78,12,Eco-Conscious,No
+2023-10,Oceania,Hyundai,Han EV,SUV,69,5,Tech Enthusiast,No
+2023-12,Oceania,Volkswagen,ID.3,Sedan,63,14,Budget Conscious,Yes
+2023-11,Asia,Ford,Model Y,Hatchback,44,18,Tech Enthusiast,Yes
+2023-02,Africa,Volkswagen,Mach-E,Coupe,69,7,Budget Conscious,Yes
+2023-09,Europe,Hyundai,Rio EV,Hatchback,74,4,Budget Conscious,No
+2023-06,Africa,Kia,Elantra EV,Hatchback,90,1,Budget Conscious,Yes
+2023-06,Africa,BMW,Han EV,Hatchback,63,10,Budget Conscious,No
+2023-02,North America,Volkswagen,Leaf,Coupe,49,8,Tech Enthusiast,No
+2023-07,South America,Ford,Leaf,SUV,59,2,Budget Conscious,Yes
+2023-12,Africa,Kia,Ariya,SUV,47,6,High Income,Yes
+2023-01,North America,Hyundai,Atto 3,Hatchback,53,9,Eco-Conscious,No
+2023-03,North America,Nissan,Elantra EV,SUV,80,14,Eco-Conscious,Yes
+2023-06,North America,Kia,ID.4,Crossover,66,12,High Income,Yes
+2023-08,Oceania,Tesla,iX,Coupe,83,16,High Income,Yes
+2023-01,Oceania,Nissan,Han EV,Sedan,73,20,High Income,No
+2023-11,Oceania,Hyundai,Han EV,Hatchback,47,5,Eco-Conscious,Yes
+2023-03,Asia,Ford,Tucson EV,Truck,97,2,High Income,Yes
+2023-05,Asia,Kia,Atto 3,Crossover,92,12,High Income,Yes
+2023-07,North America,BMW,Han EV,Hatchback,64,2,Budget Conscious,Yes
+2023-07,Africa,BYD,i4,Hatchback,77,4,Budget Conscious,No
+2023-08,Oceania,Kia,Rio EV,Truck,66,3,High Income,Yes
+2023-03,Asia,BYD,Corolla EV,Sedan,94,9,Middle Income,Yes
+2023-05,North America,Hyundai,Rio EV,Coupe,52,10,Budget Conscious,Yes
+2023-01,Oceania,Tesla,Ariya,SUV,100,3,High Income,Yes
+2023-06,Oceania,Kia,Ariya,SUV,46,5,Tech Enthusiast,No
+2023-07,Africa,Hyundai,i4,Sedan,74,1,High Income,Yes
+2023-05,Oceania,BMW,ID.5,Crossover,92,0,High Income,Yes
+2023-12,Africa,Nissan,Rio EV,Coupe,84,18,Middle Income,Yes
+2023-10,Oceania,Kia,Model S,Coupe,62,8,Tech Enthusiast,Yes
+2023-04,Africa,Nissan,Leaf,Crossover,63,13,High Income,Yes
+2023-09,North America,Nissan,Rio EV,SUV,98,9,Eco-Conscious,Yes
+2023-02,Asia,Toyota,Elantra EV,SUV,42,6,Budget Conscious,No
+2023-04,Africa,Volkswagen,ID.4,Sedan,100,7,Tech Enthusiast,Yes
+2023-10,Oceania,Ford,Rio EV,Coupe,54,7,Middle Income,Yes
+2023-10,Oceania,Kia,Leaf,Sedan,82,10,Eco-Conscious,Yes
+2023-04,Oceania,Ford,Mach-E,SUV,60,2,Budget Conscious,Yes
+2023-10,South America,Ford,ID.3,Hatchback,43,13,Budget Conscious,No
+2023-01,Oceania,Kia,Rio EV,SUV,88,14,Budget Conscious,Yes
+2023-03,North America,Hyundai,iX,Crossover,67,4,Middle Income,Yes
+2023-01,North America,Ford,i4,Hatchback,56,7,Budget Conscious,No
+2023-05,Asia,Kia,ID.5,Truck,65,19,Tech Enthusiast,No
+2023-05,Oceania,BYD,iX,Sedan,62,2,High Income,No
+2023-02,Asia,BMW,Tucson EV,SUV,80,4,Budget Conscious,Yes
+2023-02,Oceania,BYD,Model Y,Crossover,46,0,High Income,Yes
+2023-06,North America,Kia,Leaf,Crossover,98,10,Tech Enthusiast,Yes
+2023-09,Africa,BMW,i4,Coupe,73,5,Budget Conscious,No
+2023-04,Africa,Ford,Leaf,Hatchback,70,18,Tech Enthusiast,Yes
+2023-03,Oceania,Volkswagen,iX,Coupe,89,13,High Income,Yes
+2023-08,North America,Hyundai,Model 3,Hatchback,42,2,Budget Conscious,Yes
+2023-02,North America,BMW,Corolla EV,Truck,82,13,Middle Income,Yes
+2023-06,North America,BMW,Corolla EV,Truck,81,3,Tech Enthusiast,Yes
+2023-09,Asia,Nissan,Corolla EV,Coupe,68,16,Budget Conscious,No
+2023-10,South America,Hyundai,Atto 3,Hatchback,86,5,Tech Enthusiast,No
+2023-09,Asia,Hyundai,Model 3,Hatchback,56,7,Tech Enthusiast,Yes
+2023-07,Oceania,BYD,Model Y,SUV,58,6,Budget Conscious,Yes
+2023-12,Africa,BMW,i4,SUV,62,0,Middle Income,Yes
+2023-02,Oceania,Toyota,Model Y,Truck,96,5,Budget Conscious,Yes
+2023-12,North America,Tesla,Tucson EV,Hatchback,77,1,Middle Income,No
+2023-07,Africa,BMW,ID.3,Truck,83,7,High Income,Yes
+2023-12,Oceania,BMW,i4,Truck,67,15,Budget Conscious,No
+2023-08,Oceania,Kia,iX,Truck,76,15,Eco-Conscious,Yes
+2023-11,Africa,BMW,Tucson EV,Truck,47,8,High Income,Yes
+2023-07,North America,Kia,Leaf,Hatchback,99,15,Budget Conscious,Yes
+2023-09,Oceania,BYD,ID.5,Hatchback,61,7,Tech Enthusiast,Yes
+2023-08,Africa,Kia,Rio EV,Truck,58,19,Budget Conscious,No
+2023-10,Africa,Kia,iX,Sedan,74,5,Middle Income,Yes
+2023-07,Africa,BYD,Model 3,Sedan,46,13,Middle Income,Yes
+2023-02,Asia,Tesla,Rio EV,SUV,53,1,High Income,Yes
+2023-04,North America,BMW,Model Y,Sedan,58,2,Budget Conscious,Yes
+2023-12,North America,Volkswagen,Atto 3,Hatchback,55,6,Budget Conscious,Yes
+2023-04,Africa,Ford,Rio EV,Hatchback,93,0,Eco-Conscious,No
+2023-07,Oceania,Nissan,Rio EV,Hatchback,42,8,Tech Enthusiast,No
+2023-05,North America,BYD,Corolla EV,Truck,49,3,High Income,Yes
+2023-09,Oceania,Hyundai,Mach-E,Hatchback,53,2,Budget Conscious,Yes
+2023-07,Africa,Ford,Ariya,SUV,66,2,Middle Income,Yes
+2023-07,North America,Hyundai,Ariya,Crossover,100,2,Eco-Conscious,Yes
+2023-08,Oceania,BMW,Tucson EV,SUV,63,4,Eco-Conscious,Yes
+2023-02,Africa,Hyundai,Mach-E,Hatchback,93,9,Eco-Conscious,Yes
+2023-01,Africa,BMW,Model 3,Crossover,61,10,High Income,Yes
+2023-07,Oceania,Nissan,Atto 3,SUV,48,20,Eco-Conscious,Yes
+2023-12,Europe,Nissan,Elantra EV,Sedan,85,0,High Income,Yes
